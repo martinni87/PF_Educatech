@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BC14FDB2A15A8DF005B7666 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */; };
+		5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */; };
 		5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DD2A158268004F277F /* EducatechApp.swift */; };
-		5BC949E02A158268004F277F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DF2A158268004F277F /* ContentView.swift */; };
+		5BC949E02A158268004F277F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DF2A158268004F277F /* LoginView.swift */; };
 		5BC949E22A15826A004F277F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E12A15826A004F277F /* Assets.xcassets */; };
 		5BC949E52A15826A004F277F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E42A15826A004F277F /* Preview Assets.xcassets */; };
+		5BC949F42A15956C004F277F /* PortraitLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F32A15956C004F277F /* PortraitLoginView.swift */; };
+		5BC949F72A15973C004F277F /* LandscapeLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F62A15973C004F277F /* LandscapeLoginView.swift */; };
+		5BC949F92A159D45004F277F /* LoginViewOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F82A159D45004F277F /* LoginViewOrientation.swift */; };
+		5BC949FB2A15A1C0004F277F /* TabletMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FA2A15A1C0004F277F /* TabletMode.swift */; };
+		5BC949FD2A15A2E1004F277F /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FC2A15A2E1004F277F /* LoginButtons.swift */; };
+		5BC94A002A15A700004F277F /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FF2A15A700004F277F /* Videos.swift */; };
+		5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC94A022A15A765004F277F /* FirebaseConnection.swift */; };
+		5BC94A052A15A7BA004F277F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BC94A042A15A7BA004F277F /* Localizable.strings */; };
+		5BD8247A2A1A67D10092A3DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824792A1A67D10092A3DC /* LoginController.swift */; };
+		5BD8247D2A1A6CA40092A3DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247C2A1A6CA40092A3DC /* FirebaseAnalytics */; };
+		5BD8247F2A1A6CA40092A3DC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247E2A1A6CA40092A3DC /* FirebaseAnalyticsSwift */; };
+		5BD824812A1A7AA00092A3DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		5BC949DA2A158268004F277F /* Educatech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Educatech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC949DD2A158268004F277F /* EducatechApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatechApp.swift; sourceTree = "<group>"; };
-		5BC949DF2A158268004F277F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5BC949DF2A158268004F277F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BC949E12A15826A004F277F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC949E42A15826A004F277F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5BC949F32A15956C004F277F /* PortraitLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLoginView.swift; sourceTree = "<group>"; };
+		5BC949F62A15973C004F277F /* LandscapeLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeLoginView.swift; sourceTree = "<group>"; };
+		5BC949F82A159D45004F277F /* LoginViewOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewOrientation.swift; sourceTree = "<group>"; };
+		5BC949FA2A15A1C0004F277F /* TabletMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletMode.swift; sourceTree = "<group>"; };
+		5BC949FC2A15A2E1004F277F /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
+		5BC949FF2A15A700004F277F /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		5BC94A022A15A765004F277F /* FirebaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
+		5BC94A042A15A7BA004F277F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5BD824792A1A67D10092A3DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +52,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD8247F2A1A6CA40092A3DC /* FirebaseAnalyticsSwift in Frameworks */,
+				5BD8247D2A1A6CA40092A3DC /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BC14FD82A15A8B1005B7666 /* LoginEmail */ = {
+			isa = PBXGroup;
+			children = (
+				5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */,
+			);
+			path = LoginEmail;
+			sourceTree = "<group>";
+		};
+		5BC14FD92A15A8C3005B7666 /* SignUpEmail */ = {
+			isa = PBXGroup;
+			children = (
+				5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */,
+			);
+			path = SignUpEmail;
+			sourceTree = "<group>";
+		};
 		5BC949D12A158267004F277F = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +95,15 @@
 		5BC949DC2A158268004F277F /* Educatech */ = {
 			isa = PBXGroup;
 			children = (
+				5BD824752A1A66CB0092A3DC /* Strings */,
+				5BD824742A1A66AC0092A3DC /* Backend */,
+				5BC949FE2A15A6ED004F277F /* Models */,
+				5BC949F52A159570004F277F /* Login */,
+				5BC14FD82A15A8B1005B7666 /* LoginEmail */,
+				5BC14FD92A15A8C3005B7666 /* SignUpEmail */,
 				5BC949DD2A158268004F277F /* EducatechApp.swift */,
-				5BC949DF2A158268004F277F /* ContentView.swift */,
 				5BC949E12A15826A004F277F /* Assets.xcassets */,
+				5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */,
 				5BC949E32A15826A004F277F /* Preview Content */,
 			);
 			path = Educatech;
@@ -65,6 +115,76 @@
 				5BC949E42A15826A004F277F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5BC949F22A1594CA004F277F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BC949F82A159D45004F277F /* LoginViewOrientation.swift */,
+				5BC949F32A15956C004F277F /* PortraitLoginView.swift */,
+				5BC949F62A15973C004F277F /* LandscapeLoginView.swift */,
+				5BC949FA2A15A1C0004F277F /* TabletMode.swift */,
+				5BC949FC2A15A2E1004F277F /* LoginButtons.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BC949F52A159570004F277F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5BD824772A1A675C0092A3DC /* Model */,
+				5BD824762A1A67480092A3DC /* View */,
+				5BD824782A1A676B0092A3DC /* Controller */,
+				5BC949F22A1594CA004F277F /* Extensions */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5BC949FE2A15A6ED004F277F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BC949FF2A15A700004F277F /* Videos.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BD824742A1A66AC0092A3DC /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		5BD824752A1A66CB0092A3DC /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				5BC94A042A15A7BA004F277F /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		5BD824762A1A67480092A3DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BC949DF2A158268004F277F /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BD824772A1A675C0092A3DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BD824782A1A676B0092A3DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BD824792A1A67D10092A3DC /* LoginController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +203,10 @@
 			dependencies = (
 			);
 			name = Educatech;
+			packageProductDependencies = (
+				5BD8247C2A1A6CA40092A3DC /* FirebaseAnalytics */,
+				5BD8247E2A1A6CA40092A3DC /* FirebaseAnalyticsSwift */,
+			);
 			productName = Educatech;
 			productReference = 5BC949DA2A158268004F277F /* Educatech.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 5BC949D12A158267004F277F;
+			packageReferences = (
+				5BD8247B2A1A6CA40092A3DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5BC949DB2A158268004F277F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC949E52A15826A004F277F /* Preview Assets.xcassets in Resources */,
+				5BD824812A1A7AA00092A3DC /* GoogleService-Info.plist in Resources */,
+				5BC94A052A15A7BA004F277F /* Localizable.strings in Resources */,
 				5BC949E22A15826A004F277F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +266,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC949E02A158268004F277F /* ContentView.swift in Sources */,
+				5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */,
+				5BC949FB2A15A1C0004F277F /* TabletMode.swift in Sources */,
+				5BD8247A2A1A67D10092A3DC /* LoginController.swift in Sources */,
+				5BC94A002A15A700004F277F /* Videos.swift in Sources */,
+				5BC949F42A15956C004F277F /* PortraitLoginView.swift in Sources */,
+				5BC14FDB2A15A8DF005B7666 /* LoginEmailView.swift in Sources */,
+				5BC949F92A159D45004F277F /* LoginViewOrientation.swift in Sources */,
+				5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */,
+				5BC949E02A158268004F277F /* LoginView.swift in Sources */,
+				5BC949F72A15973C004F277F /* LandscapeLoginView.swift in Sources */,
+				5BC949FD2A15A2E1004F277F /* LoginButtons.swift in Sources */,
 				5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,13 +406,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Educatech/Preview Content\"";
+				DEVELOPMENT_TEAM = Y22585Y2W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Educatech;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -281,6 +421,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nitramy.Educatech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -295,13 +438,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Educatech/Preview Content\"";
+				DEVELOPMENT_TEAM = Y22585Y2W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Educatech;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +453,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nitramy.Educatech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -337,6 +484,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BD8247B2A1A6CA40092A3DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BD8247C2A1A6CA40092A3DC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BD8247B2A1A6CA40092A3DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5BD8247E2A1A6CA40092A3DC /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BD8247B2A1A6CA40092A3DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BC949D22A158267004F277F /* Project object */;
 }
