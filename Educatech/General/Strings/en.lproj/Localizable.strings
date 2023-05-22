@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings (English)
+  Educatech
+
+  Created by Martín Antonio on 18/5/23.
+  
+*/
+
+"APP_NAME" = "Educatech";
+"SLOGAN" = "Access a world of knowledge right at the palm of your hand.";
+"NOT_AVAILABLE" = "View under construction... 🚧👷🏽‍♂️🚧";
+"EMAIL_LOGIN" = "Login with email";
+"FACEBOOK_LOGIN" = "Continue with Facebook";
+"GOOGLE_LOGIN" = "Continue with Google";
+"APPLE_LOGIN" = "Continue with Apple";
+"LOGIN_MESSAGE" = "Don't have an account yet?";
+"ASK_FOR_SIGNUP" = "Sign up now! Click here";
+"WELCOME" = "Welcome back!";
+"LOGIN_INDICATIONS" = "Enter the email address you used to register to log into your account";
+"ENTER_EMAIL" = "Enter your email";
+"ENTER_PASSWORD" = "Enter your password";
+"FORGOT_PASSWORD_1" = "Don't remember your password";
+"FORGOT_PASSWORD_2" = "Reset your password";
+"LOGIN_BUTTON" = "Login";

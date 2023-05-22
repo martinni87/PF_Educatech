@@ -26,7 +26,8 @@ struct EducatechApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                LoginView()
+                InitialView()
+                //HomeView()
             }
         }
     }

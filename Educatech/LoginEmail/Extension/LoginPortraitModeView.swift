@@ -1,8 +1,8 @@
 //
-//  PortraitLoginView.swift
+//  LoginPortraitModeView.swift
 //  Educatech
 //
-//  Created by Martín Antonio on 18/5/23.
+//  Created by Martín Antonio on 22/5/23.
 //
 
 import SwiftUI
@@ -10,7 +10,7 @@ import SwiftUI
 extension LoginView {
     
     //Variation of login view for portrait mode detected
-    @ViewBuilder func getPortraitMode(option: Binding<LoginOption?>) -> some View{
+    @ViewBuilder func getPortraitMode(option: Binding<InitOption?>) -> some View{
         VStack {
             VStack {
                 Image("app_logo")
@@ -20,12 +20,12 @@ extension LoginView {
                     .shadow(radius: 15)
                     .padding(.top, 30)
                 
-                Text("Educatech")
+                Text(LocalizedStringKey("APP_NAME"))
                     .font(.system(size: 40, weight: .black, design: .rounded))
                     .bold()
                 .shadow(radius: 15)
                 
-                Text("Accede a un mundo de conocimiento en la palma de tu mano")
+                Text(LocalizedStringKey("SLOGAN"))
                     .font(.body)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)

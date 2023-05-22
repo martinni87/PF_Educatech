@@ -7,44 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5BC14FDB2A15A8DF005B7666 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */; };
+		5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginView.swift */; };
 		5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */; };
 		5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DD2A158268004F277F /* EducatechApp.swift */; };
-		5BC949E02A158268004F277F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DF2A158268004F277F /* LoginView.swift */; };
+		5BC949E02A158268004F277F /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DF2A158268004F277F /* InitialView.swift */; };
 		5BC949E22A15826A004F277F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E12A15826A004F277F /* Assets.xcassets */; };
 		5BC949E52A15826A004F277F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E42A15826A004F277F /* Preview Assets.xcassets */; };
-		5BC949F42A15956C004F277F /* PortraitLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F32A15956C004F277F /* PortraitLoginView.swift */; };
-		5BC949F72A15973C004F277F /* LandscapeLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F62A15973C004F277F /* LandscapeLoginView.swift */; };
-		5BC949F92A159D45004F277F /* LoginViewOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949F82A159D45004F277F /* LoginViewOrientation.swift */; };
-		5BC949FB2A15A1C0004F277F /* TabletMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FA2A15A1C0004F277F /* TabletMode.swift */; };
-		5BC949FD2A15A2E1004F277F /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FC2A15A2E1004F277F /* LoginButtons.swift */; };
 		5BC94A002A15A700004F277F /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FF2A15A700004F277F /* Videos.swift */; };
 		5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC94A022A15A765004F277F /* FirebaseConnection.swift */; };
-		5BC94A052A15A7BA004F277F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BC94A042A15A7BA004F277F /* Localizable.strings */; };
-		5BD8247A2A1A67D10092A3DC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824792A1A67D10092A3DC /* LoginController.swift */; };
+		5BD8247A2A1A67D10092A3DC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824792A1A67D10092A3DC /* InitialViewController.swift */; };
 		5BD8247D2A1A6CA40092A3DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247C2A1A6CA40092A3DC /* FirebaseAnalytics */; };
 		5BD8247F2A1A6CA40092A3DC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247E2A1A6CA40092A3DC /* FirebaseAnalyticsSwift */; };
 		5BD824812A1A7AA00092A3DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */; };
+		5BD824852A1A7E9B0092A3DC /* LoginEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824842A1A7E9B0092A3DC /* LoginEmailController.swift */; };
+		5BD824882A1A860C0092A3DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824872A1A860C0092A3DC /* HomeView.swift */; };
+		5BD8248E2A1AA6860092A3DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BD824902A1AA6860092A3DC /* Localizable.strings */; };
+		5BD824972A1AD1630092A3DC /* LoginLandscapeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824962A1AD1630092A3DC /* LoginLandscapeModeView.swift */; };
+		5BD824992A1AD1730092A3DC /* LoginPortraitModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824982A1AD1730092A3DC /* LoginPortraitModeView.swift */; };
+		5BD8249B2A1AD1CE0092A3DC /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8249A2A1AD1CE0092A3DC /* LoginButtons.swift */; };
+		5BD8249F2A1ADA4E0092A3DC /* LoginViewModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8249E2A1ADA4E0092A3DC /* LoginViewModules.swift */; };
+		5BD824A12A1B56A10092A3DC /* HomeViewPortraitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824A02A1B56A10092A3DC /* HomeViewPortraitMode.swift */; };
+		5BD824A32A1B56AB0092A3DC /* HomeviewLandscapeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824A22A1B56AB0092A3DC /* HomeviewLandscapeMode.swift */; };
+		5BD824A52A1B56B90092A3DC /* HomeViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824A42A1B56B90092A3DC /* HomeViewElements.swift */; };
+		5BD824A72A1B8DB10092A3DC /* InitialViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824A62A1B8DB10092A3DC /* InitialViewElements.swift */; };
+		5BD824A92A1B8DBF0092A3DC /* InitialViewPortraitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824A82A1B8DBF0092A3DC /* InitialViewPortraitMode.swift */; };
+		5BD824AB2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824AA2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift */; };
+		5BD824AD2A1BC4EA0092A3DC /* LoginViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824AC2A1BC4EA0092A3DC /* LoginViewElements.swift */; };
+		5BD824AF2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824AE2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift */; };
+		5BD824B12A1BC5080092A3DC /* LoginViewLandscapeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824B02A1BC5080092A3DC /* LoginViewLandscapeMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		5BC14FDA2A15A8DF005B7666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
 		5BC949DA2A158268004F277F /* Educatech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Educatech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC949DD2A158268004F277F /* EducatechApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatechApp.swift; sourceTree = "<group>"; };
-		5BC949DF2A158268004F277F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5BC949DF2A158268004F277F /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		5BC949E12A15826A004F277F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC949E42A15826A004F277F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5BC949F32A15956C004F277F /* PortraitLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLoginView.swift; sourceTree = "<group>"; };
-		5BC949F62A15973C004F277F /* LandscapeLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeLoginView.swift; sourceTree = "<group>"; };
-		5BC949F82A159D45004F277F /* LoginViewOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewOrientation.swift; sourceTree = "<group>"; };
-		5BC949FA2A15A1C0004F277F /* TabletMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletMode.swift; sourceTree = "<group>"; };
-		5BC949FC2A15A2E1004F277F /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
 		5BC949FF2A15A700004F277F /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 		5BC94A022A15A765004F277F /* FirebaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
-		5BC94A042A15A7BA004F277F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		5BD824792A1A67D10092A3DC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5BD824792A1A67D10092A3DC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BD824842A1A7E9B0092A3DC /* LoginEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailController.swift; sourceTree = "<group>"; };
+		5BD824872A1A860C0092A3DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5BD8248F2A1AA6860092A3DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BD824912A1AABE10092A3DC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BD824962A1AD1630092A3DC /* LoginLandscapeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLandscapeModeView.swift; sourceTree = "<group>"; };
+		5BD824982A1AD1730092A3DC /* LoginPortraitModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPortraitModeView.swift; sourceTree = "<group>"; };
+		5BD8249A2A1AD1CE0092A3DC /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
+		5BD8249E2A1ADA4E0092A3DC /* LoginViewModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModules.swift; sourceTree = "<group>"; };
+		5BD824A02A1B56A10092A3DC /* HomeViewPortraitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPortraitMode.swift; sourceTree = "<group>"; };
+		5BD824A22A1B56AB0092A3DC /* HomeviewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeviewLandscapeMode.swift; sourceTree = "<group>"; };
+		5BD824A42A1B56B90092A3DC /* HomeViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewElements.swift; sourceTree = "<group>"; };
+		5BD824A62A1B8DB10092A3DC /* InitialViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewElements.swift; sourceTree = "<group>"; };
+		5BD824A82A1B8DBF0092A3DC /* InitialViewPortraitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewPortraitMode.swift; sourceTree = "<group>"; };
+		5BD824AA2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewLandscapeMode.swift; sourceTree = "<group>"; };
+		5BD824AC2A1BC4EA0092A3DC /* LoginViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewElements.swift; sourceTree = "<group>"; };
+		5BD824AE2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPortraitMode.swift; sourceTree = "<group>"; };
+		5BD824B02A1BC5080092A3DC /* LoginViewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewLandscapeMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +84,9 @@
 		5BC14FD82A15A8B1005B7666 /* LoginEmail */ = {
 			isa = PBXGroup;
 			children = (
-				5BC14FDA2A15A8DF005B7666 /* LoginEmailView.swift */,
+				5BD824822A1A7E800092A3DC /* View */,
+				5BD824832A1A7E860092A3DC /* Controller */,
+				5BD824892A1A9CB30092A3DC /* Extension */,
 			);
 			path = LoginEmail;
 			sourceTree = "<group>";
@@ -95,13 +118,13 @@
 		5BC949DC2A158268004F277F /* Educatech */ = {
 			isa = PBXGroup;
 			children = (
-				5BD824752A1A66CB0092A3DC /* Strings */,
-				5BD824742A1A66AC0092A3DC /* Backend */,
-				5BC949FE2A15A6ED004F277F /* Models */,
-				5BC949F52A159570004F277F /* Login */,
+				5BD824772A1A675C0092A3DC /* General */,
+				5BC949F52A159570004F277F /* InitialView */,
 				5BC14FD82A15A8B1005B7666 /* LoginEmail */,
 				5BC14FD92A15A8C3005B7666 /* SignUpEmail */,
-				5BC949DD2A158268004F277F /* EducatechApp.swift */,
+				5BD824862A1A86000092A3DC /* Home */,
+				5BD824742A1A66AC0092A3DC /* Firebase */,
+				5BC949FE2A15A6ED004F277F /* Models */,
 				5BC949E12A15826A004F277F /* Assets.xcassets */,
 				5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */,
 				5BC949E32A15826A004F277F /* Preview Content */,
@@ -117,27 +140,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5BC949F22A1594CA004F277F /* Extensions */ = {
+		5BC949F52A159570004F277F /* InitialView */ = {
 			isa = PBXGroup;
 			children = (
-				5BC949F82A159D45004F277F /* LoginViewOrientation.swift */,
-				5BC949F32A15956C004F277F /* PortraitLoginView.swift */,
-				5BC949F62A15973C004F277F /* LandscapeLoginView.swift */,
-				5BC949FA2A15A1C0004F277F /* TabletMode.swift */,
-				5BC949FC2A15A2E1004F277F /* LoginButtons.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		5BC949F52A159570004F277F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				5BD824772A1A675C0092A3DC /* Model */,
 				5BD824762A1A67480092A3DC /* View */,
 				5BD824782A1A676B0092A3DC /* Controller */,
-				5BC949F22A1594CA004F277F /* Extensions */,
 			);
-			path = Login;
+			path = InitialView;
 			sourceTree = "<group>";
 		};
 		5BC949FE2A15A6ED004F277F /* Models */ = {
@@ -148,18 +157,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5BD824742A1A66AC0092A3DC /* Backend */ = {
+		5BD824742A1A66AC0092A3DC /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
 			);
-			path = Backend;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		5BD824752A1A66CB0092A3DC /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				5BC94A042A15A7BA004F277F /* Localizable.strings */,
+				5BD824902A1AA6860092A3DC /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -167,24 +176,70 @@
 		5BD824762A1A67480092A3DC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5BC949DF2A158268004F277F /* LoginView.swift */,
+				5BC949DF2A158268004F277F /* InitialView.swift */,
+				5BD824A62A1B8DB10092A3DC /* InitialViewElements.swift */,
+				5BD824A82A1B8DBF0092A3DC /* InitialViewPortraitMode.swift */,
+				5BD824AA2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		5BD824772A1A675C0092A3DC /* Model */ = {
+		5BD824772A1A675C0092A3DC /* General */ = {
 			isa = PBXGroup;
 			children = (
+				5BD824752A1A66CB0092A3DC /* Strings */,
+				5BC949DD2A158268004F277F /* EducatechApp.swift */,
 			);
-			path = Model;
+			path = General;
 			sourceTree = "<group>";
 		};
 		5BD824782A1A676B0092A3DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5BD824792A1A67D10092A3DC /* LoginController.swift */,
+				5BD824792A1A67D10092A3DC /* InitialViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5BD824822A1A7E800092A3DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BC14FDA2A15A8DF005B7666 /* LoginView.swift */,
+				5BD824AC2A1BC4EA0092A3DC /* LoginViewElements.swift */,
+				5BD824AE2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift */,
+				5BD824B02A1BC5080092A3DC /* LoginViewLandscapeMode.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BD824832A1A7E860092A3DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BD824842A1A7E9B0092A3DC /* LoginEmailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5BD824862A1A86000092A3DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5BD824872A1A860C0092A3DC /* HomeView.swift */,
+				5BD824A42A1B56B90092A3DC /* HomeViewElements.swift */,
+				5BD824A02A1B56A10092A3DC /* HomeViewPortraitMode.swift */,
+				5BD824A22A1B56AB0092A3DC /* HomeviewLandscapeMode.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5BD824892A1A9CB30092A3DC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5BD8249E2A1ADA4E0092A3DC /* LoginViewModules.swift */,
+				5BD824962A1AD1630092A3DC /* LoginLandscapeModeView.swift */,
+				5BD824982A1AD1730092A3DC /* LoginPortraitModeView.swift */,
+				5BD8249A2A1AD1CE0092A3DC /* LoginButtons.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +288,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 5BC949D12A158267004F277F;
 			packageReferences = (
@@ -254,7 +310,7 @@
 			files = (
 				5BC949E52A15826A004F277F /* Preview Assets.xcassets in Resources */,
 				5BD824812A1A7AA00092A3DC /* GoogleService-Info.plist in Resources */,
-				5BC94A052A15A7BA004F277F /* Localizable.strings in Resources */,
+				5BD8248E2A1AA6860092A3DC /* Localizable.strings in Resources */,
 				5BC949E22A15826A004F277F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,21 +323,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */,
-				5BC949FB2A15A1C0004F277F /* TabletMode.swift in Sources */,
-				5BD8247A2A1A67D10092A3DC /* LoginController.swift in Sources */,
+				5BD824882A1A860C0092A3DC /* HomeView.swift in Sources */,
+				5BD824AF2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift in Sources */,
+				5BD824A72A1B8DB10092A3DC /* InitialViewElements.swift in Sources */,
+				5BD8247A2A1A67D10092A3DC /* InitialViewController.swift in Sources */,
+				5BD824A32A1B56AB0092A3DC /* HomeviewLandscapeMode.swift in Sources */,
+				5BD824992A1AD1730092A3DC /* LoginPortraitModeView.swift in Sources */,
+				5BD824B12A1BC5080092A3DC /* LoginViewLandscapeMode.swift in Sources */,
+				5BD824A92A1B8DBF0092A3DC /* InitialViewPortraitMode.swift in Sources */,
+				5BD824AD2A1BC4EA0092A3DC /* LoginViewElements.swift in Sources */,
 				5BC94A002A15A700004F277F /* Videos.swift in Sources */,
-				5BC949F42A15956C004F277F /* PortraitLoginView.swift in Sources */,
-				5BC14FDB2A15A8DF005B7666 /* LoginEmailView.swift in Sources */,
-				5BC949F92A159D45004F277F /* LoginViewOrientation.swift in Sources */,
+				5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */,
+				5BD8249B2A1AD1CE0092A3DC /* LoginButtons.swift in Sources */,
+				5BD824A12A1B56A10092A3DC /* HomeViewPortraitMode.swift in Sources */,
 				5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */,
-				5BC949E02A158268004F277F /* LoginView.swift in Sources */,
-				5BC949F72A15973C004F277F /* LandscapeLoginView.swift in Sources */,
-				5BC949FD2A15A2E1004F277F /* LoginButtons.swift in Sources */,
+				5BD824852A1A7E9B0092A3DC /* LoginEmailController.swift in Sources */,
+				5BD824AB2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift in Sources */,
+				5BD8249F2A1ADA4E0092A3DC /* LoginViewModules.swift in Sources */,
+				5BC949E02A158268004F277F /* InitialView.swift in Sources */,
+				5BD824A52A1B56B90092A3DC /* HomeViewElements.swift in Sources */,
 				5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */,
+				5BD824972A1AD1630092A3DC /* LoginLandscapeModeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5BD824902A1AA6860092A3DC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BD8248F2A1AA6860092A3DC /* en */,
+				5BD824912A1AABE10092A3DC /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5BC949E62A15826A004F277F /* Debug */ = {
@@ -410,10 +488,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Educatech;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,10 +521,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Educatech;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
