@@ -1,5 +1,5 @@
 //
-//  LoginEmailController.swift
+//  LoginViewController.swift
 //  Educatech
 //
 //  Created by Martín Antonio on 21/5/23.
@@ -18,7 +18,7 @@ enum EmailOption: String, Identifiable {
     }
 }
 
-struct LoginEmailController {
+struct LoginViewController {
     
     // MARK: Validate Email Syntax: uses the regular expresion to check if it's a valid email format.
     // Returns 'true' for valid email, otherwise 'false'
