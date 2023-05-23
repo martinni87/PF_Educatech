@@ -20,45 +20,45 @@ enum EmailOption: String, Identifiable {
 
 struct LoginViewController {
     
+    let commonValidations = CommonValidations()
+    
     // MARK: Validate Email Syntax: uses the regular expresion to check if it's a valid email format.
     // Returns 'true' for valid email, otherwise 'false'
     private func validEmailSyntax(email: String) -> Bool {
-        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: email)
+        commonValidations.validEmailSyntax(email: email)
     }
    
     // MARK: Validate Password Syntax: uses regular expression to check if it's a valid password format.
     // Returns 'true' for valid email, otherwise 'false'
     private func validPasswordSyntax(password: String) -> Bool {
-        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$" // 8 characters, 1 number, 1 letter, any place
-        let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
-        return passwordPredicate.evaluate(with: password)
-}
-    private func validateCredentials(email: String, password: String) -> Text{
+        commonValidations.validPasswordSyntax(password: password)
+    }
+    
+    public func validateCredentials(email: String, password: String) -> Bool {
         
-        if !validEmailSyntax(email: email){
-            return Text("Email syntax not valid")
+        //Syntax check
+        if !validEmailSyntax(email: email) {
+            return false
         }
-
-        if !validPasswordSyntax(password: password){
-            return Text("Password syntax not valid")
+        if !validPasswordSyntax(password: password) {
+            return false
         }
         
-        return Text("Everything is good! 🍀")
+        //Check token given from server to validate credentials (correct email and password)
+        // MARK: Write new code here to access server, get a TOKEN and return false if it's incorrect or true if it's correct
+        
+        return true
     }
     
     // MARK: Method to show different views based on the selected option
-    public func selectView(for action: EmailOption) -> AnyView{
+    @ViewBuilder public func selectView(for action: EmailOption) -> some View{
         switch action {
         case .signIn:
-            return AnyView(HomeView())
+            HomeView()
         case .resetPassword:
-            return AnyView(Text("Reset Password"))
+            Text("Reset Password")
         case .register:
-            return AnyView(SignUpEmailView())
+            SignupView()
         }
-        
     }
-    
 }

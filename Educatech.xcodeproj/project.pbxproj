@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0020FC2A1CB038000A243B /* SignupViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0020FB2A1CB038000A243B /* SignupViewElements.swift */; };
+		5B0020FE2A1CB049000A243B /* SignupViewPortraitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0020FD2A1CB049000A243B /* SignupViewPortraitMode.swift */; };
+		5B0021002A1CB057000A243B /* SignupViewLandscapeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0020FF2A1CB057000A243B /* SignupViewLandscapeMode.swift */; };
+		5B0021042A1CCA7A000A243B /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021032A1CCA7A000A243B /* SignupController.swift */; };
+		5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021052A1CCFB6000A243B /* CommonValidations.swift */; };
 		5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginView.swift */; };
-		5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */; };
+		5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignupView.swift */; };
 		5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DD2A158268004F277F /* EducatechApp.swift */; };
 		5BC949E02A158268004F277F /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949DF2A158268004F277F /* InitialView.swift */; };
 		5BC949E22A15826A004F277F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E12A15826A004F277F /* Assets.xcassets */; };
@@ -34,8 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B0020FB2A1CB038000A243B /* SignupViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewElements.swift; sourceTree = "<group>"; };
+		5B0020FD2A1CB049000A243B /* SignupViewPortraitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewPortraitMode.swift; sourceTree = "<group>"; };
+		5B0020FF2A1CB057000A243B /* SignupViewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewLandscapeMode.swift; sourceTree = "<group>"; };
+		5B0021032A1CCA7A000A243B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		5B0021052A1CCFB6000A243B /* CommonValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValidations.swift; sourceTree = "<group>"; };
 		5BC14FDA2A15A8DF005B7666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		5BC14FDC2A15A90C005B7666 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5BC949DA2A158268004F277F /* Educatech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Educatech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC949DD2A158268004F277F /* EducatechApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatechApp.swift; sourceTree = "<group>"; };
 		5BC949DF2A158268004F277F /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
@@ -73,6 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0021012A1CCA52000A243B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BC14FDC2A15A90C005B7666 /* SignupView.swift */,
+				5B0020FB2A1CB038000A243B /* SignupViewElements.swift */,
+				5B0020FD2A1CB049000A243B /* SignupViewPortraitMode.swift */,
+				5B0020FF2A1CB057000A243B /* SignupViewLandscapeMode.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B0021022A1CCA59000A243B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B0021032A1CCA7A000A243B /* SignupController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5BC14FD82A15A8B1005B7666 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,12 +111,13 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		5BC14FD92A15A8C3005B7666 /* SignUpEmail */ = {
+		5BC14FD92A15A8C3005B7666 /* SignupView */ = {
 			isa = PBXGroup;
 			children = (
-				5BC14FDC2A15A90C005B7666 /* SignUpEmailView.swift */,
+				5B0021012A1CCA52000A243B /* View */,
+				5B0021022A1CCA59000A243B /* Controller */,
 			);
-			path = SignUpEmail;
+			path = SignupView;
 			sourceTree = "<group>";
 		};
 		5BC949D12A158267004F277F = {
@@ -112,7 +142,7 @@
 				5BD824772A1A675C0092A3DC /* General */,
 				5BC949F52A159570004F277F /* InitialView */,
 				5BC14FD82A15A8B1005B7666 /* LoginView */,
-				5BC14FD92A15A8C3005B7666 /* SignUpEmail */,
+				5BC14FD92A15A8C3005B7666 /* SignupView */,
 				5BD824862A1A86000092A3DC /* Home */,
 				5BD824742A1A66AC0092A3DC /* Firebase */,
 				5BC949FE2A15A6ED004F277F /* Models */,
@@ -180,6 +210,7 @@
 			children = (
 				5BD824752A1A66CB0092A3DC /* Strings */,
 				5BC949DD2A158268004F277F /* EducatechApp.swift */,
+				5B0021052A1CCFB6000A243B /* CommonValidations.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -305,8 +336,11 @@
 				5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */,
 				5BD824882A1A860C0092A3DC /* HomeView.swift in Sources */,
 				5BD824AF2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift in Sources */,
+				5B0020FC2A1CB038000A243B /* SignupViewElements.swift in Sources */,
 				5BD824A72A1B8DB10092A3DC /* InitialViewElements.swift in Sources */,
+				5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */,
 				5BD8247A2A1A67D10092A3DC /* InitialViewController.swift in Sources */,
+				5B0021002A1CB057000A243B /* SignupViewLandscapeMode.swift in Sources */,
 				5BD824A32A1B56AB0092A3DC /* HomeviewLandscapeMode.swift in Sources */,
 				5BD824B12A1BC5080092A3DC /* LoginViewLandscapeMode.swift in Sources */,
 				5BD824A92A1B8DBF0092A3DC /* InitialViewPortraitMode.swift in Sources */,
@@ -314,7 +348,9 @@
 				5BC94A002A15A700004F277F /* Videos.swift in Sources */,
 				5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */,
 				5BD824A12A1B56A10092A3DC /* HomeViewPortraitMode.swift in Sources */,
-				5BC14FDD2A15A90C005B7666 /* SignUpEmailView.swift in Sources */,
+				5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */,
+				5B0021042A1CCA7A000A243B /* SignupController.swift in Sources */,
+				5B0020FE2A1CB049000A243B /* SignupViewPortraitMode.swift in Sources */,
 				5BD824852A1A7E9B0092A3DC /* LoginViewController.swift in Sources */,
 				5BD824AB2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift in Sources */,
 				5BC949E02A158268004F277F /* InitialView.swift in Sources */,

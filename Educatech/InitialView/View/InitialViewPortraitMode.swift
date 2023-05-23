@@ -20,7 +20,7 @@ struct InitialViewPortraitMode: View {
             Spacer()
             
             VStack {
-                initialViewElements.drawPicture(width: 200, height: 200)
+                initialViewElements.drawPicture(width: 150, height: 150)
                 initialViewElements.drawAppTitle()
                 initialViewElements.drawSlogan()
             }

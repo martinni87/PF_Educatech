@@ -12,10 +12,11 @@ struct LoginViewLandscapeMode: View {
     @Binding var email: String
     @Binding var password: String
     @Binding var option: EmailOption?
+    @Binding var showAlert: Bool
     
     var body: some View {
         
-        let loginViewElements = LoginViewElements(email: $email, password: $password, option: $option)
+        let loginViewElements = LoginViewElements(email: $email, password: $password, option: $option, showAlert: $showAlert)
         
         VStack (spacing:30){
             Spacer()
@@ -51,8 +52,9 @@ struct LoginViewLandscapeMode_Previews: PreviewProvider {
     @State static var email: String = ""
     @State static var password: String = ""
     @State static var option: EmailOption?
+    @State static var showAlert: Bool = false
     
     static var previews: some View {
-        LoginViewLandscapeMode(email: $email, password: $password, option: $option)
+        LoginViewLandscapeMode(email: $email, password: $password, option: $option, showAlert: $showAlert)
     }
 }

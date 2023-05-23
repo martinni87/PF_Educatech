@@ -22,3 +22,16 @@
 "LOGIN_MESSAGE" = "¿Aun no tienes una cuenta?";
 "ASK_FOR_SIGNUP" = "¡Regístrate ahora! Click aquí";
 "LOGIN_BUTTON" = "Entrar";
+"ERROR_CREDENTIALS" = "Credenciales incorrectas";
+"ERROR_CREDENTIALS_MESSAGE" = "Email o contraseña incorrectos. Por favor, revise la información aportada y vuelva a intentarlo.";
+"OK_BUTTON" = "OK";
+"NEW_REGISTER_FORM_TITLE" = "Registro de usuario";
+"FORM_SECTION_PERSONAL" = "Datos personales";
+"FORM_SECTION_CREDENTIALS" = "Datos de acceso";
+"TEXTFIELD_PLACEHOLDER_FIRSTNAME" = "Escribe tu nombre";
+"TEXTFIELD_PLACEHOLDER_LASTNAME" = "Escribe tu apellido";
+"TEXTFIELD_PLACEHOLDER_EMAIL" = "Escribe tu email";
+"TEXTFIELD_PLACEHOLDER_PASSWORD1" = "Escribe una contraseña";
+"TEXTFIELD_PLACEHOLDER_PASSWORD2" = "Repita tu contraseña";
+"CREATE_NEW_USER_BUTTON" = "Crear nuevo usuario";
+"RESET_BUTTON" = "Reset";

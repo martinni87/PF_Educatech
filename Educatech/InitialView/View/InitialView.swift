@@ -13,6 +13,7 @@ struct InitialView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
+    //MARK: State variables to pass through lower layers of code (Bindings)
     @State var optionSelected: InitOption?
     
     var body: some View{

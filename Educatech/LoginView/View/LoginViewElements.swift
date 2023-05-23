@@ -12,6 +12,7 @@ struct LoginViewElements {
     @Binding var email: String
     @Binding var password: String
     @Binding var option: EmailOption?
+    @Binding var showAlert: Bool
 
     @ViewBuilder func drawTitleAndIndications() -> some View{
         VStack {
@@ -59,11 +60,25 @@ struct LoginViewElements {
     
     @ViewBuilder func drawSignInButton() -> some View{
         Button(LocalizedStringKey("LOGIN_BUTTON"), action: {
+            //Check credentials locally: if true, then option = .signIn, if false, option = .error
+            guard LoginViewController().validateCredentials(email: email, password: password) else {
+                print("Debería mostrarse la alerta")
+                showAlert = true
+                return
+            }
+            print("No debería mostrarse la alerta")
+            showAlert = false
             option = .signIn
         })
         .padding()
         .buttonStyle(.bordered)
         .tint(.mint)
+        .alert(isPresented: $showAlert){
+            Alert(
+                title: Text(LocalizedStringKey("ERROR_CREDENTIALS")),
+                message: Text(LocalizedStringKey("ERROR_CREDENTIALS_MESSAGE")),
+                dismissButton: .default(Text(LocalizedStringKey("OK_BUTTON"))))
+        }
     }
     
     @ViewBuilder func drawSignUpButton() -> some View{
