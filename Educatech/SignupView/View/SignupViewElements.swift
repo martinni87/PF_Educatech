@@ -12,7 +12,7 @@ import SwiftUI
 struct SignupViewElements {
     
     @Binding var user: UserModel
-    @Binding var formStatus: RegisterStatus
+    @Binding var registrationStatus: RegisterStatus?
     
     @ViewBuilder func drawInstructionsText() -> some View {
         Text("FILL_FORM_INSTRUCTIONS")
@@ -23,43 +23,43 @@ struct SignupViewElements {
         case .firstName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_FIRSTNAME"), text: $user.firstName)
                 .onTapGesture {
-                    formStatus = .noData
+                    registrationStatus = .noData
                 }
                 .padding(5)
-                .border((formStatus == .firstNameEmpty) ? .pink : .clear)
-                .shadow(color: (formStatus == .firstNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
+                .border((registrationStatus == .firstNameEmpty) ? .pink : .clear)
+                .shadow(color: (registrationStatus == .firstNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .lastName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_LASTNAME"), text: $user.lastName)
                 .onTapGesture {
-                    formStatus = .noData
+                    registrationStatus = .noData
                 }
                 .padding(5)
-                .border((formStatus == .lastNameEmpty) ? .pink : .clear)
-                .shadow(color: (formStatus == .lastNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
+                .border((registrationStatus == .lastNameEmpty) ? .pink : .clear)
+                .shadow(color: (registrationStatus == .lastNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .email:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_EMAIL"), text: $user.email)
                 .onTapGesture {
-                    formStatus = .noData
+                    registrationStatus = .noData
                 }
                 .padding(5)
-                .border((formStatus == .emailEmpty || formStatus == .emailSyntaxError) ? .pink : .clear)
-                .shadow(color: (formStatus == .emailEmpty || formStatus == .emailSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
+                .border((registrationStatus == .emailEmpty || registrationStatus == .emailSyntaxError) ? .pink : .clear)
+                .shadow(color: (registrationStatus == .emailEmpty || registrationStatus == .emailSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .password:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD1"), text: $user.password)
                 .onTapGesture {
-                    formStatus = .noData
+                    registrationStatus = .noData
                 }
                 .padding(5)
-                .border((formStatus == .passwordEmpty || formStatus == .passwordSyntaxError) ? .pink : .clear)
-                .shadow(color: (formStatus == .passwordEmpty || formStatus == .passwordSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
+                .border((registrationStatus == .passwordEmpty || registrationStatus == .passwordSyntaxError) ? .pink : .clear)
+                .shadow(color: (registrationStatus == .passwordEmpty || registrationStatus == .passwordSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .passwordCheck:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD2"), text: $user.passwordCheck)
                 .onTapGesture {
-                    formStatus = .noData
+                    registrationStatus = .noData
                 }
                 .padding(5)
-                .border((formStatus == .passwordCheckEmpty || formStatus == .passwordNoMatchError) ? .pink : .clear)
-                .shadow(color: (formStatus == .passwordCheckEmpty || formStatus == .passwordNoMatchError) ? .red : .clear, radius: 5, x: 0, y: 0)
+                .border((registrationStatus == .passwordCheckEmpty || registrationStatus == .passwordNoMatchError) ? .pink : .clear)
+                .shadow(color: (registrationStatus == .passwordCheckEmpty || registrationStatus == .passwordNoMatchError) ? .red : .clear, radius: 5, x: 0, y: 0)
         }
     }
     
@@ -67,11 +67,15 @@ struct SignupViewElements {
         switch type {
         case .submit:
             Button(action: {
-                formStatus = SignupController().validateForm(user: user, actionType: .submit)
-                if formStatus == .noError {
-                    SignupController().sendData(user: user)
-                    user.userRole = .student
-                    user.isLoggedIn = true
+                registrationStatus = SignupController().validateForm(user: user, actionType: .submit)
+                if registrationStatus == .noError {
+                    if SignupController().sendData(user: user) == .noError {
+                        //MARK: UPDATE DATABASE
+                        user.isLoggedIn = true
+                        user.userRole = .student
+                        self.user = user
+                        registrationStatus = .noError
+                    }
                 }
             }) {
                 Label(LocalizedStringKey("CREATE_NEW_USER_BUTTON"), systemImage: "checkmark.circle")
@@ -83,7 +87,7 @@ struct SignupViewElements {
             .controlSize(.large)
         case .reset:
             Button(action: {
-                formStatus = SignupController().validateForm(user: user, actionType: .reset)
+                registrationStatus = SignupController().validateForm(user: user, actionType: .reset)
                 user.firstName = ""
                 user.lastName = ""
                 user.email = ""

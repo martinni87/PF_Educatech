@@ -20,7 +20,7 @@ struct SignupView: View {
     
     //MARK: State variables to pass through lower layers of code (Bindings)
     @State var user = UserModel()
-    @State var formStatus = RegisterStatus.noData
+    @State var registrationStatus: RegisterStatus?
     
     var body: some View {
         NavigationStack{
@@ -28,11 +28,16 @@ struct SignupView: View {
                 //For vertical compact: Landscape
                 if verticalSizeClass == .compact {
 
-                    SignupViewLandscapeMode(user: $user, formStatus: $formStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $registrationStatus)
                 }
                 //For horizontal compact: Portrait
                 else if horizontalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $formStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $registrationStatus)
+                }
+            }
+            .sheet(item: $registrationStatus) { status in
+                if status == .noError && user.isLoggedIn {
+                    HomeView()
                 }
             }
             .toolbar {
@@ -52,6 +57,5 @@ struct SignupView: View {
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
         SignupView()
-//        SignUpEmailView(authenticationViewModel: AuthenticationViewModel())
     }
 }

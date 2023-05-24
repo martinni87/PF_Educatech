@@ -20,7 +20,7 @@ enum SignupButtonTypes {
     case reset
 }
 
-enum RegisterStatus {
+enum RegisterStatus: String, Identifiable {
     case firstNameEmpty
     case lastNameEmpty
     case emailEmpty
@@ -32,6 +32,11 @@ enum RegisterStatus {
     case serverRegistrationError
     case noError
     case noData
+    
+    //To conform Identifiable protocol
+    var id: String {
+        return rawValue
+    }
 }
 
 struct SignupController {
@@ -84,10 +89,7 @@ struct SignupController {
             return .passwordNoMatchError
         }
         
-        // MARK: Write new code here to access server, get a TOKEN and return false if it's incorrect or true if it's correct
-//        var serverToken = ""
-//        guard serverToken == "OK" else { return .serverRegistrationError}
-        FirebaseAuth().signupNewUser(user: user)
+        // MARK: Result if connection and creation of new user is VALID. Then no error.
         return .noError
     }
     
@@ -105,7 +107,11 @@ struct SignupController {
         }
     }
     
-    func sendData(user: UserModel){
-        //TODO Function to send data to firebase
+    func sendData(user: UserModel) -> RegisterStatus {
+        // MARK: if all previous validations are OK, then try to create new user. Call to firebase for new signup with current credentials
+        if FirebaseConnection().signUpNewUser(user: user) == .serverRegistrationError {
+            return .serverRegistrationError //Result if connection fails
+        }
+        return .noError
     }
 }

@@ -13,6 +13,7 @@
 		5B0021042A1CCA7A000A243B /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021032A1CCA7A000A243B /* SignupController.swift */; };
 		5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021052A1CCFB6000A243B /* CommonValidations.swift */; };
 		5B48D6B42A1D8163008EDD28 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B48D6B32A1D8163008EDD28 /* FirebaseAuth */; };
+		5B48D6B62A1E64D2008EDD28 /* FirebaseConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */; };
 		5B9CC5D82A1D11A7000E66EB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CC5D72A1D11A7000E66EB /* UserModel.swift */; };
 		5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginView.swift */; };
 		5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignupView.swift */; };
@@ -21,7 +22,7 @@
 		5BC949E22A15826A004F277F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E12A15826A004F277F /* Assets.xcassets */; };
 		5BC949E52A15826A004F277F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC949E42A15826A004F277F /* Preview Assets.xcassets */; };
 		5BC94A002A15A700004F277F /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC949FF2A15A700004F277F /* Videos.swift */; };
-		5BC94A032A15A765004F277F /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC94A022A15A765004F277F /* FirebaseAuth.swift */; };
+		5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC94A022A15A765004F277F /* FirebaseConnection.swift */; };
 		5BD8247A2A1A67D10092A3DC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD824792A1A67D10092A3DC /* InitialViewController.swift */; };
 		5BD8247D2A1A6CA40092A3DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247C2A1A6CA40092A3DC /* FirebaseAnalytics */; };
 		5BD8247F2A1A6CA40092A3DC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BD8247E2A1A6CA40092A3DC /* FirebaseAnalyticsSwift */; };
@@ -46,6 +47,7 @@
 		5B0020FF2A1CB057000A243B /* SignupViewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewLandscapeMode.swift; sourceTree = "<group>"; };
 		5B0021032A1CCA7A000A243B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		5B0021052A1CCFB6000A243B /* CommonValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValidations.swift; sourceTree = "<group>"; };
+		5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnectionRepository.swift; sourceTree = "<group>"; };
 		5B9CC5D72A1D11A7000E66EB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5BC14FDA2A15A8DF005B7666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BC14FDC2A15A90C005B7666 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		5BC949E12A15826A004F277F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC949E42A15826A004F277F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BC949FF2A15A700004F277F /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
-		5BC94A022A15A765004F277F /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
+		5BC94A022A15A765004F277F /* FirebaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
 		5BD824792A1A67D10092A3DC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BD824842A1A7E9B0092A3DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +196,8 @@
 		5BD824742A1A66AC0092A3DC /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				5BC94A022A15A765004F277F /* FirebaseAuth.swift */,
+				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
+				5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -347,9 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC94A032A15A765004F277F /* FirebaseAuth.swift in Sources */,
+				5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */,
 				5BD824882A1A860C0092A3DC /* HomeView.swift in Sources */,
 				5BD824AF2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift in Sources */,
+				5B48D6B62A1E64D2008EDD28 /* FirebaseConnectionRepository.swift in Sources */,
 				5B0020FC2A1CB038000A243B /* SignupViewElements.swift in Sources */,
 				5BD824A72A1B8DB10092A3DC /* InitialViewElements.swift in Sources */,
 				5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */,

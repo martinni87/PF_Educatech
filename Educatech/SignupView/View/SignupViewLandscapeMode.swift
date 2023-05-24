@@ -10,11 +10,11 @@ import SwiftUI
 struct SignupViewLandscapeMode: View {
     
     @Binding var user: UserModel
-    @Binding var formStatus: RegisterStatus
+    @Binding var formStatus: RegisterStatus?
     
     var body: some View {
         
-        let signupViewElements = SignupViewElements(user: $user, formStatus: $formStatus)
+        let signupViewElements = SignupViewElements(user: $user, registrationStatus: $formStatus)
         
         NavigationStack{
             Spacer()
@@ -46,7 +46,7 @@ struct SignupViewLandscapeMode: View {
 struct SignupViewLandscapeMode_Previews: PreviewProvider {
     
     @State static var user = UserModel()
-    @State static var formStatus = RegisterStatus.noData
+    @State static var formStatus: RegisterStatus?
     
     static var previews: some View {
         SignupViewLandscapeMode(user: $user, formStatus: $formStatus)
