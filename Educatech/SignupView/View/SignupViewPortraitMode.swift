@@ -9,15 +9,12 @@ import SwiftUI
 
 struct SignupViewPortraitMode: View {
     
-    @Binding var firstName: String
-    @Binding var lastName: String
-    @Binding var email: String
-    @Binding var password: String
-    @Binding var passwordCheck: String
+    @Binding var user: UserModel
+    @Binding var formStatus: RegisterStatus
     
     var body: some View {
         
-        let signupViewElements = SignupViewElements(firstName: $firstName, lastName: $lastName, email: $email, password: $password, passwordCheck: $passwordCheck)
+        let signupViewElements = SignupViewElements(user: $user, formStatus: $formStatus)
         
         NavigationStack {
             Spacer()
@@ -33,26 +30,22 @@ struct SignupViewPortraitMode: View {
                 }
             }
             .navigationTitle(LocalizedStringKey("NEW_REGISTER_FORM_TITLE"))
-            Spacer()
             HStack {
                 signupViewElements.drawButton(type: .submit)
                 signupViewElements.drawButton(type: .reset)
             }
+            .frame(maxWidth: .infinity, minHeight: 30)
             .padding()
-            Spacer()
         }
     }
 }
 
 struct SignupViewPortraitMode_Previews: PreviewProvider {
     
-    @State static var firstName: String = ""
-    @State static var lastName: String = ""
-    @State static var email: String = ""
-    @State static var password: String = ""
-    @State static var passwordCheck: String = ""
+    @State static var user = UserModel()
+    @State static var formStatus = RegisterStatus.noData
     
-    static var previews: some View {
-        SignupViewPortraitMode(firstName: $firstName, lastName: $lastName, email: $email, password: $password, passwordCheck: $passwordCheck)
+    static var previews: some View {       
+        SignupViewPortraitMode(user: $user, formStatus: $formStatus)
     }
 }

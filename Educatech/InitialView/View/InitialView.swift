@@ -18,22 +18,21 @@ struct InitialView: View {
     
     var body: some View{
         
-        VStack {
-            //For vertical compact: Landscape
-            if verticalSizeClass == .compact {
-                InitialViewLandscapeMode(optionSelected: $optionSelected)
+        NavigationStack {
+            VStack {
+                //For vertical compact: Landscape
+                if verticalSizeClass == .compact {
+                    InitialViewLandscapeMode(optionSelected: $optionSelected)
+                }
+                //For horizontal compact: Portrait
+                else if horizontalSizeClass == .compact {
+                    InitialViewPortraitMode(optionSelected: $optionSelected)
+                }
             }
-            //For horizontal compact: Portrait
-            else if horizontalSizeClass == .compact {
-                InitialViewPortraitMode(optionSelected: $optionSelected)
+            .sheet(item: $optionSelected) { optionSelected in
+                InitialViewController().selectView(for: optionSelected)
+                    .presentationCompactAdaptation(.fullScreenCover)
             }
-        }
-        .sheet(item: $optionSelected) { optionSelected in
-            InitialViewController().selectView(for: optionSelected)
-        }
-        .onTapGesture {
-            // Dissmis keyboard on tap gesture on screeen
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 }

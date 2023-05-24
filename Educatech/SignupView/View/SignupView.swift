@@ -15,22 +15,35 @@ struct SignupView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
+    //MARK: Environment variable to dismiss views
+    @Environment(\.dismiss) var dismiss
+    
     //MARK: State variables to pass through lower layers of code (Bindings)
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var passwordCheck: String = ""
+    @State var user = UserModel()
+    @State var formStatus = RegisterStatus.noData
     
     var body: some View {
-        VStack{
-            //For vertical compact: Landscape
-            if verticalSizeClass == .compact {
-                SignupViewLandscapeMode(firstName: $firstName, lastName: $lastName, email: $email, password: $password, passwordCheck: $passwordCheck)
+        NavigationStack{
+            VStack {
+                //For vertical compact: Landscape
+                if verticalSizeClass == .compact {
+
+                    SignupViewLandscapeMode(user: $user, formStatus: $formStatus)
+                }
+                //For horizontal compact: Portrait
+                else if horizontalSizeClass == .compact {
+                    SignupViewLandscapeMode(user: $user, formStatus: $formStatus)
+                }
             }
-            //For horizontal compact: Portrait
-            else if horizontalSizeClass == .compact {
-                SignupViewPortraitMode(firstName: $firstName, lastName: $lastName, email: $email, password: $password, passwordCheck: $passwordCheck)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Label("", systemImage: "xmark")
+                            .labelStyle(.iconOnly)
+                    }
+                })
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum SignupTextFieldTypes {
+enum CustomTextFieldTypes {
     case firstName
     case lastName
     case email
@@ -20,7 +20,7 @@ enum SignupButtonTypes {
     case reset
 }
 
-enum ErrorType {
+enum RegisterStatus {
     case firstNameEmpty
     case lastNameEmpty
     case emailEmpty
@@ -31,6 +31,7 @@ enum ErrorType {
     case passwordNoMatchError
     case serverRegistrationError
     case noError
+    case noData
 }
 
 struct SignupController {
@@ -49,53 +50,62 @@ struct SignupController {
         commonValidations.validPasswordSyntax(password: password)
     }
     
-    private func validatePersonalData(firstName: String, lastName: String) -> ErrorType {
+    private func validatePersonalData(user: UserModel) -> RegisterStatus {
         //All fields completed check
-        if firstName.isEmpty {
+        if user.firstName.isEmpty {
             return .firstNameEmpty
         }
-        if lastName.isEmpty {
+        if user.lastName.isEmpty {
             return .lastNameEmpty
         }
         return .noError
     }
     
-    private func validateCredentials(email: String, password: String, passwordCheck: String) -> ErrorType {
+    private func validateCredentials(user: UserModel) -> RegisterStatus {
         //All fields completed check
-        if email.isEmpty {
+        if user.email.isEmpty {
             return .emailEmpty
         }
-        if password.isEmpty {
+        if user.password.isEmpty {
             return .passwordEmpty
         }
-        if passwordCheck.isEmpty {
+        if user.passwordCheck.isEmpty {
             return .passwordCheckEmpty
         }
         //Syntax check
-        if !validEmailSyntax(email: email) {
+        if !validEmailSyntax(email: user.email) {
             return .emailSyntaxError
         }
-        if !validPasswordSyntax(password: password) {
+        if !validPasswordSyntax(password: user.password) {
             return .passwordSyntaxError
         }
         //Check localy if password and passwordCheck match
-        if password != passwordCheck {
+        if user.password != user.passwordCheck {
             return .passwordNoMatchError
         }
         
         // MARK: Write new code here to access server, get a TOKEN and return false if it's incorrect or true if it's correct
-        var serverToken = ""
-        guard serverToken == "OK" else { return .serverRegistrationError}
+//        var serverToken = ""
+//        guard serverToken == "OK" else { return .serverRegistrationError}
+        FirebaseAuth().signupNewUser(user: user)
         return .noError
     }
     
-    func validateForm (actionType: SignupButtonTypes) -> Bool {
+    func validateForm (user: UserModel, actionType: SignupButtonTypes) -> RegisterStatus {
         switch actionType {
         case .submit:
-            validatePersonalData(firstName: <#T##String#>, lastName: <#T##String#>)
-            return 1 != 1
+            if validatePersonalData(user: user) == .noError {
+                return validateCredentials(user: user)
+            }
+            else {
+                return validatePersonalData(user: user)
+            }
         case .reset:
-            return 1 != 1
+            return .noData
         }
+    }
+    
+    func sendData(user: UserModel){
+        //TODO Function to send data to firebase
     }
 }

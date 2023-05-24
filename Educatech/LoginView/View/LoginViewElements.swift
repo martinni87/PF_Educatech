@@ -62,11 +62,11 @@ struct LoginViewElements {
         Button(LocalizedStringKey("LOGIN_BUTTON"), action: {
             //Check credentials locally: if true, then option = .signIn, if false, option = .error
             guard LoginViewController().validateCredentials(email: email, password: password) else {
-                print("Debería mostrarse la alerta")
+//                print("Debería mostrarse la alerta")
                 showAlert = true
                 return
             }
-            print("No debería mostrarse la alerta")
+//            print("No debería mostrarse la alerta")
             showAlert = false
             option = .signIn
         })

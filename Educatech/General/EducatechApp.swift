@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
 
 //Register of app delegate for Firebase Setup with property wrapper UIApplicationDelegateAdaptor
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -26,7 +27,8 @@ struct EducatechApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                InitialView()
+                //InitialView()
+                SignupView()
                 //HomeView()
             }
         }
