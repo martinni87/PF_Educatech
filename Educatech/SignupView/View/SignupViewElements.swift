@@ -12,7 +12,7 @@ import SwiftUI
 struct SignupViewElements {
     
     @Binding var user: UserModel
-    @Binding var registrationStatus: RegisterStatus?
+    @Binding var registrationStatus: LogStatus?
     
     @ViewBuilder func drawInstructionsText() -> some View {
         Text("FILL_FORM_INSTRUCTIONS")
@@ -88,13 +88,7 @@ struct SignupViewElements {
         case .reset:
             Button(action: {
                 registrationStatus = SignupController().validateForm(user: user, actionType: .reset)
-                user.firstName = ""
-                user.lastName = ""
-                user.email = ""
-                user.password = ""
-                user.passwordCheck = ""
-                user.isLoggedIn = false
-                user.userRole = .notDefined
+                user = UserModel() //Variable user equals new empty instance of UseModel
             }) {
                 Label(LocalizedStringKey("RESET_BUTTON"), systemImage: "trash.circle")
                     .frame(maxWidth: .infinity)

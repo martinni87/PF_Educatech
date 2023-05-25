@@ -7,20 +7,12 @@
 
 import SwiftUI
 
-enum CustomTextFieldTypes {
-    case firstName
-    case lastName
-    case email
-    case password
-    case passwordCheck
-}
-
 enum SignupButtonTypes {
     case submit
     case reset
 }
 
-enum RegisterStatus: String, Identifiable {
+enum LogStatus: String, Identifiable {
     case firstNameEmpty
     case lastNameEmpty
     case emailEmpty
@@ -55,7 +47,7 @@ struct SignupController {
         commonValidations.validPasswordSyntax(password: password)
     }
     
-    private func validatePersonalData(user: UserModel) -> RegisterStatus {
+    private func validatePersonalData(user: UserModel) -> LogStatus {
         //All fields completed check
         if user.firstName.isEmpty {
             return .firstNameEmpty
@@ -66,7 +58,7 @@ struct SignupController {
         return .noError
     }
     
-    private func validateCredentials(user: UserModel) -> RegisterStatus {
+    private func validateCredentials(user: UserModel) -> LogStatus {
         //All fields completed check
         if user.email.isEmpty {
             return .emailEmpty
@@ -93,7 +85,7 @@ struct SignupController {
         return .noError
     }
     
-    func validateForm (user: UserModel, actionType: SignupButtonTypes) -> RegisterStatus {
+    func validateForm (user: UserModel, actionType: SignupButtonTypes) -> LogStatus {
         switch actionType {
         case .submit:
             if validatePersonalData(user: user) == .noError {
@@ -107,7 +99,7 @@ struct SignupController {
         }
     }
     
-    func sendData(user: UserModel) -> RegisterStatus {
+    func sendData(user: UserModel) -> LogStatus {
         // MARK: if all previous validations are OK, then try to create new user. Call to firebase for new signup with current credentials
         if FirebaseConnection().signUpNewUser(user: user) == .serverRegistrationError {
             return .serverRegistrationError //Result if connection fails

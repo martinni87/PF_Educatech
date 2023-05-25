@@ -11,10 +11,10 @@ import FirebaseAuth
 struct FirebaseConnection {
     
     // New user register
-    func signUpNewUser(user: UserModel) -> RegisterStatus {
-        var result = RegisterStatus.noError
+    func signUpNewUser(user: UserModel) -> LogStatus {
+        var result = LogStatus.noError
         Auth.auth().createUser(withEmail: user.email, password: user.password) { _,error in
-            if let error = error {
+            if let _ = error {
                 result = .serverRegistrationError
             }
         }

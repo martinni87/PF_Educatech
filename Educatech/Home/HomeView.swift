@@ -13,20 +13,24 @@ struct HomeView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
+    //MARK: Binding from previous View to keep updated the login status
+    @Binding var loginSuccessful: Bool
+    @Binding var user: UserModel
+    
     //MARK: State variables to save data from lower classes later called
     //These are going to be passed as Bindings later on.
-    @State private var textFieldText = ""
-    @State private var resultado = ""
+//    @State private var textFieldText = ""
+//    @State private var resultado = ""
         
     var body: some View {
-        Group {
+        NavigationStack {
             //For vertical compact: Landscape
             if verticalSizeClass == .compact {
-                HomeViewLandscapeMode(textFieldText: $textFieldText, resultado: $resultado)
+                HomeViewLandscapeMode(user: $user, loginSuccessful: $loginSuccessful)
             }
             //For horizontal compact: Portrait
             else if horizontalSizeClass == .compact {
-                HomeViewPortraitMode(textFieldText: $textFieldText, resultado: $resultado)
+                HomeViewPortraitMode(user: $user, loginSuccessful: $loginSuccessful)
             }
         }
         .onTapGesture {
@@ -37,7 +41,11 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
+    @State static var loginStatus: Bool = true
+    @State static var user = UserModel()
+    
     static var previews: some View {
-        HomeView()
+        HomeView(loginSuccessful: $loginStatus, user: $user)
     }
 }

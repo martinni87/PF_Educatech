@@ -29,10 +29,19 @@ struct InitialView: View {
                     InitialViewPortraitMode(optionSelected: $optionSelected)
                 }
             }
-            .sheet(item: $optionSelected) { optionSelected in
-                InitialViewController().selectView(for: optionSelected)
-                    .presentationCompactAdaptation(.fullScreenCover)
+            .fullScreenCover(item: $optionSelected) { option in
+                InitialViewController().selectView(for: option)
             }
+//            .sheet(item: $optionSelected) { optionSelected in
+//                if optionSelected == .email{
+//                    InitialViewController().selectView(for: optionSelected)
+////                        .presentationCompactAdaptation(.fullScreenCover)
+//                }
+//                else{
+//                    InitialViewController().selectView(for: optionSelected)
+//                    //not full screen cover by tghe moment
+//                }
+//            }
         }
     }
 }

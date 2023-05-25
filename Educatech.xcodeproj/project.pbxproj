@@ -14,6 +14,10 @@
 		5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021052A1CCFB6000A243B /* CommonValidations.swift */; };
 		5B48D6B42A1D8163008EDD28 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B48D6B32A1D8163008EDD28 /* FirebaseAuth */; };
 		5B48D6B62A1E64D2008EDD28 /* FirebaseConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */; };
+		5B48D6BA2A1EB24E008EDD28 /* CustomTextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */; };
+		5B48D6BC2A2001DE008EDD28 /* FacebookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BB2A2001DE008EDD28 /* FacebookLoginView.swift */; };
+		5B48D6BE2A2001ED008EDD28 /* GoogleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BD2A2001ED008EDD28 /* GoogleLoginView.swift */; };
+		5B48D6C02A2001F8008EDD28 /* AppleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BF2A2001F8008EDD28 /* AppleLoginView.swift */; };
 		5B9CC5D82A1D11A7000E66EB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CC5D72A1D11A7000E66EB /* UserModel.swift */; };
 		5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginView.swift */; };
 		5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignupView.swift */; };
@@ -48,6 +52,10 @@
 		5B0021032A1CCA7A000A243B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		5B0021052A1CCFB6000A243B /* CommonValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValidations.swift; sourceTree = "<group>"; };
 		5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnectionRepository.swift; sourceTree = "<group>"; };
+		5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldTypes.swift; sourceTree = "<group>"; };
+		5B48D6BB2A2001DE008EDD28 /* FacebookLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginView.swift; sourceTree = "<group>"; };
+		5B48D6BD2A2001ED008EDD28 /* GoogleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginView.swift; sourceTree = "<group>"; };
+		5B48D6BF2A2001F8008EDD28 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
 		5B9CC5D72A1D11A7000E66EB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5BC14FDA2A15A8DF005B7666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BC14FDC2A15A90C005B7666 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -115,11 +123,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B48D6B72A1EA3D2008EDD28 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
+				5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		5B48D6B82A1EA3FF008EDD28 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				5B0021052A1CCFB6000A243B /* CommonValidations.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
 		5BC14FD82A15A8B1005B7666 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				5BD824822A1A7E800092A3DC /* View */,
 				5BD824832A1A7E860092A3DC /* Controller */,
+				5B48D6BB2A2001DE008EDD28 /* FacebookLoginView.swift */,
+				5B48D6BD2A2001ED008EDD28 /* GoogleLoginView.swift */,
+				5B48D6BF2A2001F8008EDD28 /* AppleLoginView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -158,7 +186,7 @@
 				5BC14FD82A15A8B1005B7666 /* LoginView */,
 				5BC14FD92A15A8C3005B7666 /* SignupView */,
 				5BD824862A1A86000092A3DC /* Home */,
-				5BD824742A1A66AC0092A3DC /* Firebase */,
+				5BD824742A1A66AC0092A3DC /* Authentication */,
 				5BC949FE2A15A6ED004F277F /* Models */,
 				5BC949E12A15826A004F277F /* Assets.xcassets */,
 				5BD824802A1A7AA00092A3DC /* GoogleService-Info.plist */,
@@ -189,17 +217,18 @@
 			children = (
 				5BC949FF2A15A700004F277F /* Videos.swift */,
 				5B9CC5D72A1D11A7000E66EB /* UserModel.swift */,
+				5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5BD824742A1A66AC0092A3DC /* Firebase */ = {
+		5BD824742A1A66AC0092A3DC /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
-				5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */,
+				5B48D6B82A1EA3FF008EDD28 /* Validations */,
+				5B48D6B72A1EA3D2008EDD28 /* Firebase */,
 			);
-			path = Firebase;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		5BD824752A1A66CB0092A3DC /* Strings */ = {
@@ -226,7 +255,6 @@
 			children = (
 				5BD824752A1A66CB0092A3DC /* Strings */,
 				5BC949DD2A158268004F277F /* EducatechApp.swift */,
-				5B0021052A1CCFB6000A243B /* CommonValidations.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -362,8 +390,12 @@
 				5BD824A32A1B56AB0092A3DC /* HomeviewLandscapeMode.swift in Sources */,
 				5BD824B12A1BC5080092A3DC /* LoginViewLandscapeMode.swift in Sources */,
 				5BD824A92A1B8DBF0092A3DC /* InitialViewPortraitMode.swift in Sources */,
+				5B48D6BA2A1EB24E008EDD28 /* CustomTextFieldTypes.swift in Sources */,
+				5B48D6BE2A2001ED008EDD28 /* GoogleLoginView.swift in Sources */,
+				5B48D6C02A2001F8008EDD28 /* AppleLoginView.swift in Sources */,
 				5BD824AD2A1BC4EA0092A3DC /* LoginViewElements.swift in Sources */,
 				5BC94A002A15A700004F277F /* Videos.swift in Sources */,
+				5B48D6BC2A2001DE008EDD28 /* FacebookLoginView.swift in Sources */,
 				5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */,
 				5BD824A12A1B56A10092A3DC /* HomeViewPortraitMode.swift in Sources */,
 				5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */,

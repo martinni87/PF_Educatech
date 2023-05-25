@@ -10,8 +10,6 @@ import UIKit
 
 struct LoginView: View {
     
-//    @ObservedObject var authenticationViewModel: AuthenticationViewModel
-    
     //MARK: Environment variables to evaluate wether device is in horizontal mode or vertical mode
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -22,31 +20,32 @@ struct LoginView: View {
     //MARK: State variables to pass through lower layers of code (Bindings)
     @State var email: String = ""
     @State var password: String = ""
-    @State var option: EmailOption?
-    @State var showAlert = false
+    @State var loginSuccessful: Bool = false
+    @State var showAlert: Bool = false
+    @State var user = UserModel() //Creates empty user that will be filled with data from firebase
     
     var body: some View {
-        NavigationStack {
-            VStack{
+        
+        NavigationView {
+            VStack {
                 //For vertical compact: Landscape
-                if verticalSizeClass == .compact {
-                    LoginViewLandscapeMode(email: $email, password: $password, option: $option, showAlert: $showAlert)
+                if verticalSizeClass == .compact && !loginSuccessful{
+                    LoginViewLandscapeMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
                 }
                 //For horizontal compact: Portrait
-                else if horizontalSizeClass == .compact {
-                    LoginViewPortraitMode(email: $email, password: $password, option: $option, showAlert: $showAlert)
+                else if horizontalSizeClass == .compact && !loginSuccessful{
+                    LoginViewPortraitMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
                 }
             }
-            .sheet(item: $option) { option in
-                LoginViewController().selectView(for: option)
-                    .presentationCompactAdaptation(.fullScreenCover)
+            .fullScreenCover(isPresented: $loginSuccessful) {
+                HomeView(loginSuccessful: $loginSuccessful, user: $user)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button(action: {
                         dismiss()
                     }) {
-                        Label("Cerrar", systemImage: "xmark")
+                        Label("", systemImage: "xmark")
                             .labelStyle(.iconOnly)
                     }
                 })
@@ -58,6 +57,5 @@ struct LoginView: View {
 struct LoginEmailView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-//        LoginEmailView(authenticationViewModel: AuthenticationViewModel())
     }
 }

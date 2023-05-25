@@ -10,7 +10,7 @@ import SwiftUI
 struct SignupViewPortraitMode: View {
     
     @Binding var user: UserModel
-    @Binding var formStatus: RegisterStatus?
+    @Binding var formStatus: LogStatus?
     
     var body: some View {
         
@@ -43,7 +43,7 @@ struct SignupViewPortraitMode: View {
 struct SignupViewPortraitMode_Previews: PreviewProvider {
     
     @State static var user = UserModel()
-    @State static var formStatus: RegisterStatus?
+    @State static var formStatus: LogStatus?
     
     static var previews: some View {       
         SignupViewPortraitMode(user: $user, formStatus: $formStatus)

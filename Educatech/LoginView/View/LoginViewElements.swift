@@ -11,9 +11,12 @@ struct LoginViewElements {
     
     @Binding var email: String
     @Binding var password: String
-    @Binding var option: EmailOption?
+    @Binding var loginSuccessful: Bool
     @Binding var showAlert: Bool
+    @Binding var user: UserModel
 
+    let loginViewController = LoginViewController()
+    
     @ViewBuilder func drawTitleAndIndications() -> some View{
         VStack {
             Text(LocalizedStringKey("WELCOME"))
@@ -28,47 +31,26 @@ struct LoginViewElements {
         .multilineTextAlignment(.center)
     }
     
-    @ViewBuilder func drawTextField() -> some View{
-        TextField(LocalizedStringKey("ENTER_EMAIL"), text: $email)
-            .padding(.horizontal, 20)
-            .textFieldStyle(.roundedBorder)
-            .tint(.mint)
-    }
-    
-    @ViewBuilder func drawSecureTextField() -> some View{
-        SecureField(LocalizedStringKey("ENTER_PASSWORD"), text: $password)
-            .padding(.horizontal, 20)
-            .textFieldStyle(.roundedBorder)
-            .tint(.mint)
-    }
-    
-    @ViewBuilder func drawForgotButton() -> some View{
-        Button(action: {
-            option = .resetPassword
-        }) {
-            VStack(spacing: 10) {
-                Text(LocalizedStringKey("FORGOT_PASSWORD_1"))
-                Text(LocalizedStringKey("FORGOT_PASSWORD_2"))
-                    .bold()
-                    .underline()
-            }
+    @ViewBuilder func drawTextField(type: CustomTextFieldTypes) -> some View{
+        if type == .email {
+            TextField(LocalizedStringKey("ENTER_EMAIL"), text: $email)
+                .padding(.horizontal, 20)
+                .textFieldStyle(.roundedBorder)
+                .tint(.mint)
         }
-        .padding(.bottom,20)
-        .padding(.horizontal,20)
-        .multilineTextAlignment(.center)
+        else if type == .password {
+            SecureField(LocalizedStringKey("ENTER_PASSWORD"), text: $password)
+                .padding(.horizontal, 20)
+                .textFieldStyle(.roundedBorder)
+                .tint(.mint)
+        }
     }
     
-    @ViewBuilder func drawSignInButton() -> some View{
+    @ViewBuilder func drawSignInButton()  -> some View {
         Button(LocalizedStringKey("LOGIN_BUTTON"), action: {
-            //Check credentials locally: if true, then option = .signIn, if false, option = .error
-            guard LoginViewController().validateCredentials(email: email, password: password) else {
-//                print("Debería mostrarse la alerta")
-                showAlert = true
-                return
-            }
-//            print("No debería mostrarse la alerta")
-            showAlert = false
-            option = .signIn
+            loginSuccessful = loginViewController.loginAttempt(email: email, password: password)
+            showAlert = !loginSuccessful
+            user.email = email
         })
         .padding()
         .buttonStyle(.bordered)
@@ -81,13 +63,13 @@ struct LoginViewElements {
         }
     }
     
-    @ViewBuilder func drawSignUpButton() -> some View{
-        Button(action: {
-            option = .register
+    @ViewBuilder func drawNavigationLink(firstLocalizedKey: String, secondLocalizedKey: String, viewToGo: some View) -> some View{
+        NavigationLink(destination: {
+            viewToGo
         }) {
             VStack(spacing: 10) {
-                Text(LocalizedStringKey("LOGIN_MESSAGE"))
-                Text(LocalizedStringKey("ASK_FOR_SIGNUP"))
+                Text(LocalizedStringKey(firstLocalizedKey))
+                Text(LocalizedStringKey(secondLocalizedKey))
                     .bold()
                     .underline()
             }
@@ -96,5 +78,4 @@ struct LoginViewElements {
         .padding(.horizontal,20)
         .multilineTextAlignment(.center)
     }
-    
 }

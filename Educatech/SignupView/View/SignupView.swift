@@ -20,35 +20,23 @@ struct SignupView: View {
     
     //MARK: State variables to pass through lower layers of code (Bindings)
     @State var user = UserModel()
-    @State var registrationStatus: RegisterStatus?
+    @State var logStatus: LogStatus?
+    @State var loginSuccessful: Bool = false
     
     var body: some View {
-        NavigationStack{
+        NavigationView{
             VStack {
                 //For vertical compact: Landscape
                 if verticalSizeClass == .compact {
-
-                    SignupViewLandscapeMode(user: $user, formStatus: $registrationStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus)
                 }
                 //For horizontal compact: Portrait
                 else if horizontalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $registrationStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus)
                 }
             }
-            .sheet(item: $registrationStatus) { status in
-                if status == .noError && user.isLoggedIn {
-                    HomeView()
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Label("", systemImage: "xmark")
-                            .labelStyle(.iconOnly)
-                    }
-                })
+            .fullScreenCover(isPresented: $loginSuccessful) {
+                HomeView(loginSuccessful: $loginSuccessful, user: $user)
             }
         }
     }

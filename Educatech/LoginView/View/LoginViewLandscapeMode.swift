@@ -11,24 +11,23 @@ struct LoginViewLandscapeMode: View {
     
     @Binding var email: String
     @Binding var password: String
-    @Binding var option: EmailOption?
+    @Binding var loginSuccessful: Bool
     @Binding var showAlert: Bool
+    @Binding var user: UserModel
     
     var body: some View {
         
-        let loginViewElements = LoginViewElements(email: $email, password: $password, option: $option, showAlert: $showAlert)
+        let loginViewElements = LoginViewElements(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
         
         VStack (spacing:30){
             Spacer()
-            
             loginViewElements.drawTitleAndIndications()
                 .padding()
             Spacer()
-            
             HStack {
                 VStack {
-                    loginViewElements.drawTextField()
-                    loginViewElements.drawSecureTextField()
+                    loginViewElements.drawTextField(type: .email)
+                    loginViewElements.drawTextField(type: .password)
                 }
                 VStack {
                     
@@ -37,9 +36,9 @@ struct LoginViewLandscapeMode: View {
             }
 
             HStack{
-                loginViewElements.drawForgotButton()
+                loginViewElements.drawNavigationLink(firstLocalizedKey: "FORGOT_PASSWORD_1", secondLocalizedKey: "FORGOT_PASSWORD_2", viewToGo: Text("Recover password view"))
                     .padding()
-                loginViewElements.drawSignUpButton()
+                loginViewElements.drawNavigationLink(firstLocalizedKey: "LOGIN_MESSAGE", secondLocalizedKey: "ASK_FOR_SIGNUP", viewToGo: SignupView())
             }
             Spacer()
         }
@@ -51,10 +50,11 @@ struct LoginViewLandscapeMode_Previews: PreviewProvider {
     
     @State static var email: String = ""
     @State static var password: String = ""
-    @State static var option: EmailOption?
+    @State static var loginSuccessful: Bool = false
     @State static var showAlert: Bool = false
+    @State static var user = UserModel()
     
     static var previews: some View {
-        LoginViewLandscapeMode(email: $email, password: $password, option: $option, showAlert: $showAlert)
+        LoginViewLandscapeMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
     }
 }
