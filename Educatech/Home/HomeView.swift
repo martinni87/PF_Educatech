@@ -33,10 +33,11 @@ struct HomeView: View {
                 HomeViewPortraitMode(user: $user, loginSuccessful: $loginSuccessful)
             }
         }
-        .onTapGesture {
-            // Dissmis keyboard on tap gesture on screeen
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+//        MARK: ON tap gesture commented because it caused a problem in which a user couldn't select different tab views.
+//        .onTapGesture {
+//            // Dissmis keyboard on tap gesture on screeen
+//            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//        }
     }
 }
 

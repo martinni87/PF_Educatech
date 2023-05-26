@@ -8,10 +8,9 @@
 import Foundation
 
 enum UserRole {
-    case notDefined
     case student
     case teacher
-    case administrator
+//    case administrator
 }
 
 class UserModel {
@@ -20,17 +19,17 @@ class UserModel {
     var email: String
     var password: String
     var passwordCheck: String
-    var isLoggedIn: Bool
+//    var isLoggedIn: Bool
     var userRole: UserRole
     
     init(firstName: String, lastName: String,
-         email: String, password: String, passwordCheck: String, isLoggedIn: Bool, userRole: UserRole){
+         email: String, password: String, passwordCheck: String/*, isLoggedIn: Bool*/, userRole: UserRole){
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.password = password
         self.passwordCheck = passwordCheck
-        self.isLoggedIn = isLoggedIn
+//        self.isLoggedIn = isLoggedIn
         self.userRole = userRole
     }
     
@@ -40,7 +39,7 @@ class UserModel {
         self.email = ""
         self.password = ""
         self.passwordCheck = ""
-        self.isLoggedIn = false
-        self.userRole = .notDefined
+//        self.isLoggedIn = false
+        self.userRole = .student
     }
 }

@@ -28,11 +28,11 @@ struct SignupView: View {
             VStack {
                 //For vertical compact: Landscape
                 if verticalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus, loginSuccessful: $loginSuccessful)
                 }
                 //For horizontal compact: Portrait
                 else if horizontalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus)
+                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus, loginSuccessful: $loginSuccessful)
                 }
             }
             .fullScreenCover(isPresented: $loginSuccessful) {

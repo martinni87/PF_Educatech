@@ -14,47 +14,39 @@ struct HomeViewPortraitMode: View {
 //    @Binding var resultado: String
     @Binding var user: UserModel
     @Binding var loginSuccessful: Bool
-    
+
     var body: some View {
         
         NavigationStack{
-            TabView{
+            VStack (alignment: .trailing) {
                 Button("Cerrar sesión"){
                     loginSuccessful = !loginSuccessful
                 }
-                Text("Tab1")
-                    .tabItem {
-                        Text("HOME")
-                    }
-                Text("Tab2")
-                    .tabItem {
-                        Text("SEARCH")
-                    }
-                Text("Tab3")
-                    .tabItem {
-                        Text("MY COURSES")
-                    }
+                .tint(.mint)
+                TabView {
+                    Text("Home View with recommendations")
+                        .tabItem {
+                            Label("HOME", systemImage: "house.fill")
+                        }
+                    Text("Search View")
+                        .tabItem {
+                            Label("SEARCH", systemImage: "magnifyingglass")
+                        }
+                    Text("My Courses View")
+                        .tabItem {
+                            Label("MY COURSES", systemImage: "star.fill")
+                        }
+                    Text("Profile View")
+                        .tabItem {
+                            Label("Profile", systemImage: "person")
+                        }
+                }
             }
+            .tint(.mint)
+            .padding(.horizontal, 40)
             .navigationTitle("Welcome \(user.email)")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        
-        //Init homeViewElements, to be able to call methods to draw objects
-//        let homeViewElements = HomeViewElements(textFieldText: $textFieldText, resultado: $resultado)
-        
-        //The stack view that's going to show on screen
-//        NavigationStack {
-//            VStack {
-//                Form {
-//                    homeViewElements.drawTextField()
-//                    homeViewElements.drawTextResult()
-//                }
-//                homeViewElements.drawPrintButton()
-//            }
-//            .navigationTitle("HOME SCREEN (Portrait)")
-//            .navigationBarTitleDisplayMode(.inline)
-//        }
-//        .background(Color.gray)
-        //End of stack view
     }
 }
 

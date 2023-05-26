@@ -11,10 +11,11 @@ struct SignupViewPortraitMode: View {
     
     @Binding var user: UserModel
     @Binding var formStatus: LogStatus?
+    @Binding var loginSuccessful: Bool
     
     var body: some View {
         
-        let signupViewElements = SignupViewElements(user: $user, registrationStatus: $formStatus)
+        let signupViewElements = SignupViewElements(user: $user, registrationStatus: $formStatus, loginSuccessful: $loginSuccessful)
         
         NavigationStack {
             Spacer()
@@ -44,8 +45,9 @@ struct SignupViewPortraitMode_Previews: PreviewProvider {
     
     @State static var user = UserModel()
     @State static var formStatus: LogStatus?
+    @State static var loginSuccessful = false
     
     static var previews: some View {       
-        SignupViewPortraitMode(user: $user, formStatus: $formStatus)
+        SignupViewPortraitMode(user: $user, formStatus: $formStatus, loginSuccessful: $loginSuccessful)
     }
 }

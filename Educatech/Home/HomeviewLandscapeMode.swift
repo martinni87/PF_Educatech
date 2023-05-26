@@ -18,21 +18,34 @@ struct HomeViewLandscapeMode: View {
     var body: some View {
         
         NavigationStack{
-            TabView{
-                Text("Tab1")
-                    .tabItem {
-                        Text("HOME")
-                    }
-                Text("Tab2")
-                    .tabItem {
-                        Text("SEARCH")
-                    }
-                Text("Tab3")
-                    .tabItem {
-                        Text("MY COURSES")
-                    }
+            VStack (alignment: .trailing) {
+                Button("Cerrar sesión"){
+                    loginSuccessful = !loginSuccessful
+                }
+                .tint(.mint)
+                TabView {
+                    Text("Home View with recommendations")
+                        .tabItem {
+                            Label("HOME", systemImage: "house.fill")
+                        }
+                    Text("Search View")
+                        .tabItem {
+                            Label("SEARCH", systemImage: "magnifyingglass")
+                        }
+                    Text("My Courses View")
+                        .tabItem {
+                            Label("MY COURSES", systemImage: "star.fill")
+                        }
+                    Text("Profile View")
+                        .tabItem {
+                            Label("Profile", systemImage: "person")
+                        }
+                }
             }
+            .tint(.mint)
+            .padding(.horizontal, 40)
             .navigationTitle("Welcome \(user.email)")
+            .navigationBarTitleDisplayMode(.inline)
         }
         
 //        //Init homeViewElements, to be able to call methods to draw objects

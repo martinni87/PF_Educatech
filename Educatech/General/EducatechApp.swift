@@ -23,14 +23,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct EducatechApp: App {
     //Register of app delegate for Firebase Setup with property wrapper UIApplicationDelegateAdaptor
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    //@State var loginSuccessful = true
+//    @State var loginSuccessful = true
+//    @State var user = UserModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 InitialView()
                 //SignupView()
-                //HomeView(loginSuccessful: $loginSuccessful)
+                //HomeView(loginSuccessful: $loginSuccessful, user: $user)
             }
         }
     }

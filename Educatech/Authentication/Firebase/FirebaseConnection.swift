@@ -21,6 +21,8 @@ struct FirebaseConnection {
         return result
     }
     
+    // Login existing user
+    
     
     
 //    func signupNewUser(user: UserModel) -> RegisterStatus) {

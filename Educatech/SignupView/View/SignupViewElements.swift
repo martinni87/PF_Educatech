@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-
-
 struct SignupViewElements {
     
     @Binding var user: UserModel
     @Binding var registrationStatus: LogStatus?
+    @Binding var loginSuccessful: Bool
     
     @ViewBuilder func drawInstructionsText() -> some View {
         Text("FILL_FORM_INSTRUCTIONS")
@@ -23,7 +22,7 @@ struct SignupViewElements {
         case .firstName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_FIRSTNAME"), text: $user.firstName)
                 .onTapGesture {
-                    registrationStatus = .noData
+                    registrationStatus = .noData //To reset errors
                 }
                 .padding(5)
                 .border((registrationStatus == .firstNameEmpty) ? .pink : .clear)
@@ -31,7 +30,7 @@ struct SignupViewElements {
         case .lastName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_LASTNAME"), text: $user.lastName)
                 .onTapGesture {
-                    registrationStatus = .noData
+                    registrationStatus = .noData //To reset errors
                 }
                 .padding(5)
                 .border((registrationStatus == .lastNameEmpty) ? .pink : .clear)
@@ -39,7 +38,7 @@ struct SignupViewElements {
         case .email:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_EMAIL"), text: $user.email)
                 .onTapGesture {
-                    registrationStatus = .noData
+                    registrationStatus = .noData //To reset errors
                 }
                 .padding(5)
                 .border((registrationStatus == .emailEmpty || registrationStatus == .emailSyntaxError) ? .pink : .clear)
@@ -47,7 +46,7 @@ struct SignupViewElements {
         case .password:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD1"), text: $user.password)
                 .onTapGesture {
-                    registrationStatus = .noData
+                    registrationStatus = .noData //To reset errors
                 }
                 .padding(5)
                 .border((registrationStatus == .passwordEmpty || registrationStatus == .passwordSyntaxError) ? .pink : .clear)
@@ -55,7 +54,7 @@ struct SignupViewElements {
         case .passwordCheck:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD2"), text: $user.passwordCheck)
                 .onTapGesture {
-                    registrationStatus = .noData
+                    registrationStatus = .noData //To reset errors
                 }
                 .padding(5)
                 .border((registrationStatus == .passwordCheckEmpty || registrationStatus == .passwordNoMatchError) ? .pink : .clear)
@@ -71,8 +70,7 @@ struct SignupViewElements {
                 if registrationStatus == .noError {
                     if SignupController().sendData(user: user) == .noError {
                         //MARK: UPDATE DATABASE
-                        user.isLoggedIn = true
-                        user.userRole = .student
+                        loginSuccessful = true
                         self.user = user
                         registrationStatus = .noError
                     }
