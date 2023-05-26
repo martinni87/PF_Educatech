@@ -24,7 +24,7 @@ enum LogStatus: String, Identifiable {
     case serverRegistrationError
     case noError
     case noData
-    
+
     //To conform Identifiable protocol
     var id: String {
         return rawValue
