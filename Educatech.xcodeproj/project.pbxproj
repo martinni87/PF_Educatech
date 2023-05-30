@@ -13,12 +13,12 @@
 		5B0021042A1CCA7A000A243B /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021032A1CCA7A000A243B /* SignupController.swift */; };
 		5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0021052A1CCFB6000A243B /* CommonValidations.swift */; };
 		5B48D6B42A1D8163008EDD28 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B48D6B32A1D8163008EDD28 /* FirebaseAuth */; };
-		5B48D6B62A1E64D2008EDD28 /* FirebaseConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */; };
-		5B48D6BA2A1EB24E008EDD28 /* CustomTextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */; };
+		5B48D6BA2A1EB24E008EDD28 /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6B92A1EB24E008EDD28 /* TextFieldTypes.swift */; };
 		5B48D6BC2A2001DE008EDD28 /* FacebookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BB2A2001DE008EDD28 /* FacebookLoginView.swift */; };
 		5B48D6BE2A2001ED008EDD28 /* GoogleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BD2A2001ED008EDD28 /* GoogleLoginView.swift */; };
 		5B48D6C02A2001F8008EDD28 /* AppleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6BF2A2001F8008EDD28 /* AppleLoginView.swift */; };
-		5B48D6C22A2139C9008EDD28 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6C12A2139C9008EDD28 /* ValidationError.swift */; };
+		5B48D6C22A2139C9008EDD28 /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48D6C12A2139C9008EDD28 /* ValidationResponse.swift */; };
+		5B6587AF2A268303001F1182 /* ButtonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6587AE2A268303001F1182 /* ButtonTypes.swift */; };
 		5B9CC5D82A1D11A7000E66EB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CC5D72A1D11A7000E66EB /* UserModel.swift */; };
 		5BC14FDB2A15A8DF005B7666 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDA2A15A8DF005B7666 /* LoginView.swift */; };
 		5BC14FDD2A15A90C005B7666 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC14FDC2A15A90C005B7666 /* SignupView.swift */; };
@@ -52,12 +52,12 @@
 		5B0020FF2A1CB057000A243B /* SignupViewLandscapeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewLandscapeMode.swift; sourceTree = "<group>"; };
 		5B0021032A1CCA7A000A243B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		5B0021052A1CCFB6000A243B /* CommonValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValidations.swift; sourceTree = "<group>"; };
-		5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnectionRepository.swift; sourceTree = "<group>"; };
-		5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldTypes.swift; sourceTree = "<group>"; };
+		5B48D6B92A1EB24E008EDD28 /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
 		5B48D6BB2A2001DE008EDD28 /* FacebookLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginView.swift; sourceTree = "<group>"; };
 		5B48D6BD2A2001ED008EDD28 /* GoogleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginView.swift; sourceTree = "<group>"; };
 		5B48D6BF2A2001F8008EDD28 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
-		5B48D6C12A2139C9008EDD28 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		5B48D6C12A2139C9008EDD28 /* ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResponse.swift; sourceTree = "<group>"; };
+		5B6587AE2A268303001F1182 /* ButtonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypes.swift; sourceTree = "<group>"; };
 		5B9CC5D72A1D11A7000E66EB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5BC14FDA2A15A8DF005B7666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BC14FDC2A15A90C005B7666 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -129,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
-				5B48D6B52A1E64D2008EDD28 /* FirebaseConnectionRepository.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -219,8 +218,9 @@
 			children = (
 				5BC949FF2A15A700004F277F /* Videos.swift */,
 				5B9CC5D72A1D11A7000E66EB /* UserModel.swift */,
-				5B48D6B92A1EB24E008EDD28 /* CustomTextFieldTypes.swift */,
-				5B48D6C12A2139C9008EDD28 /* ValidationError.swift */,
+				5B48D6B92A1EB24E008EDD28 /* TextFieldTypes.swift */,
+				5B6587AE2A268303001F1182 /* ButtonTypes.swift */,
+				5B48D6C12A2139C9008EDD28 /* ValidationResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,7 +384,6 @@
 				5BC94A032A15A765004F277F /* FirebaseConnection.swift in Sources */,
 				5BD824882A1A860C0092A3DC /* HomeView.swift in Sources */,
 				5BD824AF2A1BC4FB0092A3DC /* LoginViewPortraitMode.swift in Sources */,
-				5B48D6B62A1E64D2008EDD28 /* FirebaseConnectionRepository.swift in Sources */,
 				5B0020FC2A1CB038000A243B /* SignupViewElements.swift in Sources */,
 				5BD824A72A1B8DB10092A3DC /* InitialViewElements.swift in Sources */,
 				5B0021062A1CCFB6000A243B /* CommonValidations.swift in Sources */,
@@ -392,9 +391,9 @@
 				5B0021002A1CB057000A243B /* SignupViewLandscapeMode.swift in Sources */,
 				5BD824A32A1B56AB0092A3DC /* HomeviewLandscapeMode.swift in Sources */,
 				5BD824B12A1BC5080092A3DC /* LoginViewLandscapeMode.swift in Sources */,
-				5B48D6C22A2139C9008EDD28 /* ValidationError.swift in Sources */,
+				5B48D6C22A2139C9008EDD28 /* ValidationResponse.swift in Sources */,
 				5BD824A92A1B8DBF0092A3DC /* InitialViewPortraitMode.swift in Sources */,
-				5B48D6BA2A1EB24E008EDD28 /* CustomTextFieldTypes.swift in Sources */,
+				5B48D6BA2A1EB24E008EDD28 /* TextFieldTypes.swift in Sources */,
 				5B48D6BE2A2001ED008EDD28 /* GoogleLoginView.swift in Sources */,
 				5B48D6C02A2001F8008EDD28 /* AppleLoginView.swift in Sources */,
 				5BD824AD2A1BC4EA0092A3DC /* LoginViewElements.swift in Sources */,
@@ -409,6 +408,7 @@
 				5BD824AB2A1B8DCD0092A3DC /* InitialViewLandscapeMode.swift in Sources */,
 				5B9CC5D82A1D11A7000E66EB /* UserModel.swift in Sources */,
 				5BC949E02A158268004F277F /* InitialView.swift in Sources */,
+				5B6587AF2A268303001F1182 /* ButtonTypes.swift in Sources */,
 				5BD824A52A1B56B90092A3DC /* HomeViewElements.swift in Sources */,
 				5BC949DE2A158268004F277F /* EducatechApp.swift in Sources */,
 			);

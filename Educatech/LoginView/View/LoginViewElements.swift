@@ -9,19 +9,15 @@ import SwiftUI
 
 struct LoginViewElements {
     
-    @Binding var email: String
-    @Binding var password: String
-    @Binding var loginSuccessful: Bool
-    @Binding var showAlert: Bool
     @Binding var user: UserModel
-
-    let loginViewController = LoginViewController()
+    @Binding var validationResponse: ValidationResponse
     
     @ViewBuilder func drawTitleAndIndications() -> some View{
         VStack {
             Text(LocalizedStringKey("WELCOME"))
                 .font(.largeTitle)
             .bold()
+            .padding(.bottom,20)
 
             Text(LocalizedStringKey("LOGIN_INDICATIONS"))
                 .font(.subheadline)
@@ -31,15 +27,15 @@ struct LoginViewElements {
         .multilineTextAlignment(.center)
     }
     
-    @ViewBuilder func drawTextField(type: CustomTextFieldTypes) -> some View{
+    @ViewBuilder func drawTextField(type: TextFieldTypes) -> some View{
         if type == .email {
-            TextField(LocalizedStringKey("ENTER_EMAIL"), text: $email)
+            TextField(LocalizedStringKey("ENTER_EMAIL"), text: $user.email)
                 .padding(.horizontal, 20)
                 .textFieldStyle(.roundedBorder)
                 .tint(.mint)
         }
         else if type == .password {
-            SecureField(LocalizedStringKey("ENTER_PASSWORD"), text: $password)
+            SecureField(LocalizedStringKey("ENTER_PASSWORD"), text: $user.password)
                 .padding(.horizontal, 20)
                 .textFieldStyle(.roundedBorder)
                 .tint(.mint)
@@ -48,14 +44,14 @@ struct LoginViewElements {
     
     @ViewBuilder func drawSignInButton()  -> some View {
         Button(LocalizedStringKey("LOGIN_BUTTON"), action: {
-            loginSuccessful = loginViewController.loginAttempt(email: email, password: password)
-            showAlert = !loginSuccessful
-            user.email = email
+            LoginViewController(user: $user).actionButton(actionType: .submit){ response in
+                validationResponse = response
+            }
         })
         .padding()
         .buttonStyle(.bordered)
         .tint(.mint)
-        .alert(isPresented: $showAlert){
+        .alert(isPresented: $validationResponse.alert){
             Alert(
                 title: Text(LocalizedStringKey("ERROR_CREDENTIALS")),
                 message: Text(LocalizedStringKey("ERROR_CREDENTIALS_MESSAGE")),
@@ -63,19 +59,40 @@ struct LoginViewElements {
         }
     }
     
-    @ViewBuilder func drawNavigationLink(firstLocalizedKey: String, secondLocalizedKey: String, viewToGo: some View) -> some View{
-        NavigationLink(destination: {
-            viewToGo
-        }) {
-            VStack(spacing: 10) {
-                Text(LocalizedStringKey(firstLocalizedKey))
-                Text(LocalizedStringKey(secondLocalizedKey))
-                    .bold()
-                    .underline()
+    @ViewBuilder func drawNavigationLink(type: ButtonTypes) -> some View{
+        if type == .recoverPassword {
+            NavigationLink(destination: {
+                //MARK: PENDING RECOVER PASSWORD VIEW
+                Text("Recover password view")
+            }) {
+                VStack(spacing: 10) {
+                    Text(LocalizedStringKey("FORGOT_PASSWORD_1"))
+                    Text(LocalizedStringKey("FORGOT_PASSWORD_2"))
+                        .bold()
+                        .underline()
+                }
             }
+            .padding(.bottom,20)
+            .padding(.horizontal,20)
+            .multilineTextAlignment(.center)
         }
-        .padding(.bottom,20)
-        .padding(.horizontal,20)
-        .multilineTextAlignment(.center)
+        else if type == .newRegister {
+            NavigationLink(destination: {
+                SignupView()
+            }) {
+                VStack(spacing: 10) {
+                    Text(LocalizedStringKey("ASK_FOR_SIGNUP1"))
+                    Text(LocalizedStringKey("ASK_FOR_SIGNUP2"))
+                        .bold()
+                        .underline()
+                }
+            }
+            .padding(.bottom,20)
+            .padding(.horizontal,20)
+            .multilineTextAlignment(.center)
+        }
+        
+        
+
     }
 }

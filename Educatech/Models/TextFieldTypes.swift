@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CustomTextFieldTypes {
+enum TextFieldTypes {
     case firstName
     case lastName
     case email

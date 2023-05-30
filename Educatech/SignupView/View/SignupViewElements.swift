@@ -10,70 +10,32 @@ import SwiftUI
 struct SignupViewElements {
     
     @Binding var user: UserModel
-    @Binding var registrationStatus: LogStatus?
-    @Binding var loginSuccessful: Bool
+    @Binding var validationResponse: ValidationResponse
     
     @ViewBuilder func drawInstructionsText() -> some View {
         Text("FILL_FORM_INSTRUCTIONS")
     }
     
-    @ViewBuilder func drawTextField(type: CustomTextFieldTypes) -> some View{
+    @ViewBuilder func drawTextField(type: TextFieldTypes) -> some View{
         switch type {
         case .firstName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_FIRSTNAME"), text: $user.firstName)
-                .onTapGesture {
-                    registrationStatus = .noData //To reset errors
-                }
-                .padding(5)
-                .border((registrationStatus == .firstNameEmpty) ? .pink : .clear)
-                .shadow(color: (registrationStatus == .firstNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .lastName:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_LASTNAME"), text: $user.lastName)
-                .onTapGesture {
-                    registrationStatus = .noData //To reset errors
-                }
-                .padding(5)
-                .border((registrationStatus == .lastNameEmpty) ? .pink : .clear)
-                .shadow(color: (registrationStatus == .lastNameEmpty) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .email:
             TextField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_EMAIL"), text: $user.email)
-                .onTapGesture {
-                    registrationStatus = .noData //To reset errors
-                }
-                .padding(5)
-                .border((registrationStatus == .emailEmpty || registrationStatus == .emailSyntaxError) ? .pink : .clear)
-                .shadow(color: (registrationStatus == .emailEmpty || registrationStatus == .emailSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .password:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD1"), text: $user.password)
-                .onTapGesture {
-                    registrationStatus = .noData //To reset errors
-                }
-                .padding(5)
-                .border((registrationStatus == .passwordEmpty || registrationStatus == .passwordSyntaxError) ? .pink : .clear)
-                .shadow(color: (registrationStatus == .passwordEmpty || registrationStatus == .passwordSyntaxError) ? .red : .clear, radius: 5, x: 0, y: 0)
         case .passwordCheck:
             SecureField(LocalizedStringKey("TEXTFIELD_PLACEHOLDER_PASSWORD2"), text: $user.passwordCheck)
-                .onTapGesture {
-                    registrationStatus = .noData //To reset errors
-                }
-                .padding(5)
-                .border((registrationStatus == .passwordCheckEmpty || registrationStatus == .passwordNoMatchError) ? .pink : .clear)
-                .shadow(color: (registrationStatus == .passwordCheckEmpty || registrationStatus == .passwordNoMatchError) ? .red : .clear, radius: 5, x: 0, y: 0)
         }
     }
     
-    @ViewBuilder func drawButton(type: SignupButtonTypes) -> some View {
-        switch type {
-        case .submit:
+    @ViewBuilder func drawButton(type: ButtonTypes) -> some View {
+        if type == .submit {
             Button(action: {
-                registrationStatus = SignupController().validateForm(user: user, actionType: .submit)
-                if registrationStatus == .noError {
-                    if SignupController().sendData(user: user) == .noError {
-                        //MARK: UPDATE DATABASE
-                        loginSuccessful = true
-                        self.user = user
-                        registrationStatus = .noError
-                    }
+                SignupController(user: $user).actionButton(actionType: .submit){ response in
+                    validationResponse = response
                 }
             }) {
                 Label(LocalizedStringKey("CREATE_NEW_USER_BUTTON"), systemImage: "checkmark.circle")
@@ -83,10 +45,18 @@ struct SignupViewElements {
             .tint(.mint)
             .buttonStyle(.bordered)
             .controlSize(.large)
-        case .reset:
+            .alert(isPresented: $validationResponse.alert){
+                Alert(
+                    title: validationResponse.title,
+                    message: validationResponse.message,
+                    dismissButton: .default(Text(LocalizedStringKey("OK_BUTTON"))))
+            }
+        }
+        else if type == .reset {
             Button(action: {
-                registrationStatus = SignupController().validateForm(user: user, actionType: .reset)
-                user = UserModel() //Variable user equals new empty instance of UseModel
+                SignupController(user: $user).actionButton(actionType: .reset){ response in
+                    validationResponse = response
+                }
             }) {
                 Label(LocalizedStringKey("RESET_BUTTON"), systemImage: "trash.circle")
                     .frame(maxWidth: .infinity)

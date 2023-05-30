@@ -9,15 +9,12 @@ import SwiftUI
 
 struct LoginViewLandscapeMode: View {
     
-    @Binding var email: String
-    @Binding var password: String
-    @Binding var loginSuccessful: Bool
-    @Binding var showAlert: Bool
     @Binding var user: UserModel
+    @Binding var validationResponse: ValidationResponse
     
     var body: some View {
         
-        let loginViewElements = LoginViewElements(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+        let loginViewElements = LoginViewElements(user: $user, validationResponse: $validationResponse)
         
         VStack (spacing:30){
             Spacer()
@@ -36,9 +33,9 @@ struct LoginViewLandscapeMode: View {
             }
 
             HStack{
-                loginViewElements.drawNavigationLink(firstLocalizedKey: "FORGOT_PASSWORD_1", secondLocalizedKey: "FORGOT_PASSWORD_2", viewToGo: Text("Recover password view"))
+                loginViewElements.drawNavigationLink(type: .recoverPassword)
                     .padding()
-                loginViewElements.drawNavigationLink(firstLocalizedKey: "LOGIN_MESSAGE", secondLocalizedKey: "ASK_FOR_SIGNUP", viewToGo: SignupView())
+                loginViewElements.drawNavigationLink(type: .newRegister)
             }
             Spacer()
         }
@@ -48,13 +45,10 @@ struct LoginViewLandscapeMode: View {
 
 struct LoginViewLandscapeMode_Previews: PreviewProvider {
     
-    @State static var email: String = ""
-    @State static var password: String = ""
-    @State static var loginSuccessful: Bool = false
-    @State static var showAlert: Bool = false
     @State static var user = UserModel()
+    @State static var validationResponse = ValidationResponse()
     
     static var previews: some View {
-        LoginViewLandscapeMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+        LoginViewLandscapeMode(user: $user, validationResponse: $validationResponse)
     }
 }

@@ -18,27 +18,24 @@ struct LoginView: View {
     @Environment(\.dismiss) var dismiss
     
     //MARK: State variables to pass through lower layers of code (Bindings)
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var loginSuccessful: Bool = false
-    @State var showAlert: Bool = false
-    @State var user = UserModel() //Creates empty user that will be filled with data from firebase
+    @State var user = UserModel()
+    @State var validationResponse = ValidationResponse()
     
     var body: some View {
         
         NavigationView {
             VStack {
                 //For vertical compact: Landscape
-                if verticalSizeClass == .compact && !loginSuccessful{
-                    LoginViewLandscapeMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+                if verticalSizeClass == .compact && !validationResponse.response{
+                    LoginViewLandscapeMode(user: $user, validationResponse: $validationResponse)
                 }
                 //For horizontal compact: Portrait
-                else if horizontalSizeClass == .compact && !loginSuccessful{
-                    LoginViewPortraitMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+                else if horizontalSizeClass == .compact && !validationResponse.response{
+                    LoginViewPortraitMode(user: $user, validationResponse: $validationResponse)
                 }
             }
-            .fullScreenCover(isPresented: $loginSuccessful) {
-                HomeView(loginSuccessful: $loginSuccessful, user: $user)
+            .fullScreenCover(isPresented: $validationResponse.response) {
+                HomeView(loginSuccessful: $validationResponse.response, user: $user)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {

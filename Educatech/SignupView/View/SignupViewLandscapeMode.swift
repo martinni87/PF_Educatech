@@ -10,12 +10,11 @@ import SwiftUI
 struct SignupViewLandscapeMode: View {
     
     @Binding var user: UserModel
-    @Binding var formStatus: LogStatus?
-    @Binding var loginSuccessful: Bool
+    @Binding var validationResponse: ValidationResponse
     
     var body: some View {
         
-        let signupViewElements = SignupViewElements(user: $user, registrationStatus: $formStatus, loginSuccessful: $loginSuccessful)
+        let signupViewElements = SignupViewElements(user: $user, validationResponse: $validationResponse)
         
         NavigationStack{
             Spacer()
@@ -47,10 +46,9 @@ struct SignupViewLandscapeMode: View {
 struct SignupViewLandscapeMode_Previews: PreviewProvider {
     
     @State static var user = UserModel()
-    @State static var formStatus: LogStatus?
-    @State static var loginSuccessful = false
+    @State static var validationResponse = ValidationResponse()
     
     static var previews: some View {
-        SignupViewLandscapeMode(user: $user, formStatus: $formStatus, loginSuccessful: $loginSuccessful)
+        SignupViewLandscapeMode(user: $user, validationResponse: $validationResponse)
     }
 }

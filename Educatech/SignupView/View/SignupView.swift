@@ -20,23 +20,22 @@ struct SignupView: View {
     
     //MARK: State variables to pass through lower layers of code (Bindings)
     @State var user = UserModel()
-    @State var logStatus: LogStatus?
-    @State var loginSuccessful: Bool = false
+    @State var validationResponse = ValidationResponse()
     
     var body: some View {
         NavigationView{
             VStack {
                 //For vertical compact: Landscape
                 if verticalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus, loginSuccessful: $loginSuccessful)
+                    SignupViewLandscapeMode(user: $user, validationResponse: $validationResponse)
                 }
                 //For horizontal compact: Portrait
                 else if horizontalSizeClass == .compact {
-                    SignupViewLandscapeMode(user: $user, formStatus: $logStatus, loginSuccessful: $loginSuccessful)
+                    SignupViewLandscapeMode(user: $user, validationResponse: $validationResponse)
                 }
             }
-            .fullScreenCover(isPresented: $loginSuccessful) {
-                HomeView(loginSuccessful: $loginSuccessful, user: $user)
+            .fullScreenCover(isPresented: $validationResponse.response) {
+                HomeView(loginSuccessful: $validationResponse.response, user: $user)
             }
         }
     }

@@ -13,8 +13,8 @@
 "FACEBOOK_LOGIN" = "Continue with Facebook";
 "GOOGLE_LOGIN" = "Continue with Google";
 "APPLE_LOGIN" = "Continue with Apple";
-"LOGIN_MESSAGE" = "Don't have an account yet?";
-"ASK_FOR_SIGNUP" = "Sign up now! Click here";
+"ASK_FOR_SIGNUP1" = "Don't have an account yet?";
+"ASK_FOR_SIGNUP2" = "Sign up now! Click here";
 "WELCOME" = "Welcome back!";
 "LOGIN_INDICATIONS" = "Enter the email address you used to register to log into your account";
 "ENTER_EMAIL" = "Enter your email";
@@ -26,7 +26,6 @@
 "ERROR_CREDENTIALS_MESSAGE" = "Email or password incorrect, please check the given information and try again.";
 "OK_BUTTON" = "OK";
 "NEW_REGISTER_FORM_TITLE" = "New user registration";
-"FILL_FORM_INSTRUCTIONS" = "All the fields are necesary to continue with the register, please fill all fields and press 'Create new user' when ready.";
 "FORM_SECTION_PERSONAL" = "Personal information";
 "FORM_SECTION_CREDENTIALS" = "Access information";
 "TEXTFIELD_PLACEHOLDER_FIRSTNAME" = "Enter your first name";
@@ -36,3 +35,13 @@
 "TEXTFIELD_PLACEHOLDER_PASSWORD2" = "Repeat your password";
 "CREATE_NEW_USER_BUTTON" = "Create";
 "RESET_BUTTON" = "Reset";
+"ERROR_SIGNUP" = "Error in signup";
+"CONNECTION_GRANTED" = "Connection granted";
+"USER_ALREADY_EXISTS" = "The email address already exists. Try to log in or sign up with a different email";
+"SERVER_ERROR" = "Server connection failed";
+"ALL_FIELDS_MANDATORY" = "All fields are mandatory";
+"WRONG_EMAIL_FORMAT" = "The email is not in a valid format";
+"WRONG_PASSWORD_FORMAT" = "The password is not in a valid format";
+"WRONG_PASSWORD_MATCH" = "The passwords don't match";
+"ERROR_LOGIN" = "Error in login";
+"CREDENTIALS_FAILED" = "The email address or the password are incorrect. Please, check the information and try again.";

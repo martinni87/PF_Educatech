@@ -9,15 +9,12 @@ import SwiftUI
 
 struct LoginViewPortraitMode: View {
     
-    @Binding var email: String
-    @Binding var password: String
-    @Binding var loginSuccessful: Bool
-    @Binding var showAlert: Bool
     @Binding var user: UserModel
+    @Binding var validationResponse: ValidationResponse
     
     var body: some View {
         
-        let loginViewElements = LoginViewElements(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+        let loginViewElements = LoginViewElements(user: $user, validationResponse: $validationResponse)
         
         VStack (spacing:30){
             Spacer()
@@ -29,13 +26,13 @@ struct LoginViewPortraitMode: View {
             loginViewElements.drawTextField(type: .email)
             loginViewElements.drawTextField(type: .password)
             
-            loginViewElements.drawNavigationLink(firstLocalizedKey: "FORGOT_PASSWORD_1", secondLocalizedKey: "FORGOT_PASSWORD_2", viewToGo: Text("Recover password view"))
+            loginViewElements.drawNavigationLink(type: .recoverPassword)
             
             loginViewElements.drawSignInButton()
 
             Spacer()
 
-            loginViewElements.drawNavigationLink(firstLocalizedKey: "LOGIN_MESSAGE", secondLocalizedKey: "ASK_FOR_SIGNUP", viewToGo: SignupView())
+            loginViewElements.drawNavigationLink(type: .newRegister)
         }
         .padding(.horizontal,30)
     }
@@ -43,13 +40,10 @@ struct LoginViewPortraitMode: View {
 
 struct LoginViewPortraitMode_Previews: PreviewProvider {
     
-    @State static var email: String = ""
-    @State static var password: String = ""
-    @State static var loginSuccessful: Bool = false
-    @State static var showAlert: Bool = false
     @State static var user = UserModel()
+    @State static var validationResponse = ValidationResponse()
     
     static var previews: some View {
-        LoginViewPortraitMode(email: $email, password: $password, loginSuccessful: $loginSuccessful, showAlert: $showAlert, user: $user)
+        LoginViewPortraitMode(user: $user, validationResponse: $validationResponse)
     }
 }
