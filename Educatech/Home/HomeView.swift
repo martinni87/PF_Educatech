@@ -14,13 +14,9 @@ struct HomeView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
     //MARK: Binding from previous View to keep updated the login status
-    @Binding var loginSuccessful: Bool
     @Binding var user: UserModel
+    @Binding var loginSuccessful: Bool
     
-    //MARK: State variables to save data from lower classes later called
-    //These are going to be passed as Bindings later on.
-//    @State private var textFieldText = ""
-//    @State private var resultado = ""
         
     var body: some View {
         NavigationStack {
@@ -33,20 +29,16 @@ struct HomeView: View {
                 HomeViewPortraitMode(user: $user, loginSuccessful: $loginSuccessful)
             }
         }
-//        MARK: ON tap gesture commented because it caused a problem in which a user couldn't select different tab views.
-//        .onTapGesture {
-//            // Dissmis keyboard on tap gesture on screeen
-//            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-//        }
+        .tint(.green)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     
-    @State static var loginStatus: Bool = true
     @State static var user = UserModel()
+    @State static var loginStatus: Bool = true
     
     static var previews: some View {
-        HomeView(loginSuccessful: $loginStatus, user: $user)
+        HomeView(user: $user, loginSuccessful: $loginStatus)
     }
 }

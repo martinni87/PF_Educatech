@@ -36,7 +36,7 @@ struct HomeViewLandscapeMode: View {
                         .tabItem {
                             Label("MY COURSES", systemImage: "star.fill")
                         }
-                    Text("Profile View")
+                    ProfileView()
                         .tabItem {
                             Label("Profile", systemImage: "person")
                         }

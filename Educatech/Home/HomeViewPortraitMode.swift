@@ -16,36 +16,39 @@ struct HomeViewPortraitMode: View {
     @Binding var loginSuccessful: Bool
 
     var body: some View {
-        
-        NavigationStack{
-            VStack (alignment: .trailing) {
-                Button("Cerrar sesión"){
-                    loginSuccessful = !loginSuccessful
+        TabView {
+            NavigationStack {
+                NavigationLink {
+                    Text("Home view destination. Curso 1")
+                } label: {
+                    Text("Home view label. Curso 1")
                 }
-                .tint(.mint)
-                TabView {
-                    Text("Home View with recommendations")
-                        .tabItem {
-                            Label("HOME", systemImage: "house.fill")
-                        }
-                    Text("Search View")
-                        .tabItem {
-                            Label("SEARCH", systemImage: "magnifyingglass")
-                        }
-                    Text("My Courses View")
-                        .tabItem {
-                            Label("MY COURSES", systemImage: "star.fill")
-                        }
-                    Text("Profile View")
-                        .tabItem {
-                            Label("Profile", systemImage: "person")
-                        }
+                .navigationTitle("Welcome \(user.email)")
+                .padding()
+                
+                NavigationLink {
+                    Text("Home view destination. Curso 2")
+                } label: {
+                    Text("Home view label. Curso 2")
                 }
+                .navigationTitle("Welcome \(user.email)")
+                .padding()
             }
-            .tint(.mint)
-            .padding(.horizontal, 40)
-            .navigationTitle("Welcome \(user.email)")
-            .navigationBarTitleDisplayMode(.inline)
+            .tabItem {
+                Label("HOME", systemImage: "house.fill")
+            }
+            Text("Search View")
+                .tabItem {
+                    Label("SEARCH", systemImage: "magnifyingglass")
+                }
+            Text("My Courses View")
+                .tabItem {
+                    Label("MY COURSES", systemImage: "star.fill")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
         }
     }
 }

@@ -35,7 +35,7 @@ struct SignupView: View {
                 }
             }
             .fullScreenCover(isPresented: $validationResponse.response) {
-                HomeView(loginSuccessful: $validationResponse.response, user: $user)
+                HomeView(user: $user, loginSuccessful: $validationResponse.response)
             }
         }
     }
