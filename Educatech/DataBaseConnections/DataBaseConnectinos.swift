@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 struct DataBaseConnections {
-    private let db = Firestore.firestore()
+    
     
     
 }

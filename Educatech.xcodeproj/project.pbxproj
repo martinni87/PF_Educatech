@@ -135,22 +135,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5B48D6B72A1EA3D2008EDD28 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		5B48D6B82A1EA3FF008EDD28 /* Validations */ = {
-			isa = PBXGroup;
-			children = (
-				5B0021052A1CCFB6000A243B /* CommonValidations.swift */,
-			);
-			path = Validations;
-			sourceTree = "<group>";
-		};
 		5B99D0FE2A2691BC00D3B2E3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +147,8 @@
 		5B99D1052A26AACC00D3B2E3 /* DataBaseConnections */ = {
 			isa = PBXGroup;
 			children = (
+				5BD824742A1A66AC0092A3DC /* Authentication */,
+				5BC94A022A15A765004F277F /* FirebaseConnection.swift */,
 				5B99D1062A26AAEA00D3B2E3 /* DataBaseConnectinos.swift */,
 			);
 			path = DataBaseConnections;
@@ -215,7 +201,6 @@
 				5BC14FD92A15A8C3005B7666 /* SignupView */,
 				5BD824862A1A86000092A3DC /* Home */,
 				5B99D0FE2A2691BC00D3B2E3 /* Profile */,
-				5BD824742A1A66AC0092A3DC /* Authentication */,
 				5B99D1052A26AACC00D3B2E3 /* DataBaseConnections */,
 				5BC949FE2A15A6ED004F277F /* Models */,
 				5BC949E12A15826A004F277F /* Assets.xcassets */,
@@ -257,8 +242,6 @@
 		5BD824742A1A66AC0092A3DC /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				5B48D6B82A1EA3FF008EDD28 /* Validations */,
-				5B48D6B72A1EA3D2008EDD28 /* Firebase */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -287,6 +270,7 @@
 			children = (
 				5BD824752A1A66CB0092A3DC /* Strings */,
 				5BC949DD2A158268004F277F /* EducatechApp.swift */,
+				5B0021052A1CCFB6000A243B /* CommonValidations.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";

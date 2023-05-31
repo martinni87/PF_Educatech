@@ -10,6 +10,7 @@ import SwiftUI
 struct EditProfile: View {
     
     @State var user: UserModel = UserModel()
+    @State var level = "Aprendiz"
     
     var body: some View {
         NavigationStack {
@@ -18,24 +19,28 @@ struct EditProfile: View {
                     Section(LocalizedStringKey("FORM_SECTION_PERSONAL")){
                         TextField("First name",text: $user.firstName)
                         TextField("Last name",text: $user.lastName)
-        //                TextField("Role", text: $user.userRole)
                     }
                     Section(LocalizedStringKey("FORM_SECTION_CREDENTIALS")){
                         TextField("email",text: $user.email)
                         TextField("password",text: $user.password)
                         TextField("Repeat password", text: $user.passwordCheck)
                     }
-                    HStack {
-                        Button("Guardar"){
-                            print("Guardando datos")
-                        }
-                        Button("Limpiar"){
-                            print("Limpiando datos")
-                        }
-                    }
-                    .frame(maxWidth: .infinity, minHeight: 30)
-                    .padding()
                 }
+                Text("Si quieres convertirte en profesor contacta por email con info@educatech.com y nos pondremos en contacto contigo.")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+                    .padding()
+                HStack {
+                    Button("Guardar"){
+                        print("Guardando datos")
+//                            FirebaseConnection().saveToDataBase(user: user)
+                    }
+                    Button("Limpiar"){
+                        print("Limpiando datos")
+                    }
+                }
+                .frame(maxWidth: .infinity, minHeight: 30)
+                .padding()
             }
             .navigationTitle(Text("Edit profile"))
         }

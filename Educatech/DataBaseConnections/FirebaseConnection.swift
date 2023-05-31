@@ -5,13 +5,14 @@
 //  Created by Martín Antonio on 18/5/23.
 //
 
-import Foundation
-import FirebaseAuth
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct FirebaseConnection {
     
     private let firebaseAuth = Auth.auth()
+    private let databaseConn = Firestore.firestore()
      
     // New user register
     func registerNewEmail(user: UserModel, completionBlock: @escaping (ValidationResponse) -> Void) {
@@ -39,5 +40,15 @@ struct FirebaseConnection {
                 completionBlock(ValidationResponse(title: Text(LocalizedStringKey("ERROR_SIGNUP")), message: Text(LocalizedStringKey("USER_ALREADY_EXISTS")), response: false, alert: true))
             }
         }
+    }
+    
+    //Database connection
+    func saveToDataBase(user: UserModel){
+        databaseConn.collection("users").document(user.email).setData([
+            "firstName": user.firstName,
+            "lastName": user.lastName,
+            "email": user.email,
+            "profilePic": user.profilePic
+        ])
     }
 }

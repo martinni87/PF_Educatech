@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum UserRole {
-    case student
-    case teacher
-}
+//enum UserRole {
+//    case student
+//    case teacher
+//}
 
 class UserModel {
     var firstName: String
@@ -18,7 +18,7 @@ class UserModel {
     var email: String
     var password: String
     var passwordCheck: String
-    var userRole: UserRole
+    var profilePic: String
     
     init(firstName: String, lastName: String,
          email: String, password: String){
@@ -27,7 +27,7 @@ class UserModel {
         self.email = email
         self.password = password
         self.passwordCheck = ""
-        self.userRole = .student
+        self.profilePic = ""
     }
     
     init(){
@@ -36,6 +36,6 @@ class UserModel {
         self.email = ""
         self.password = ""
         self.passwordCheck = ""
-        self.userRole = .student
+        self.profilePic = ""
     }
 }
